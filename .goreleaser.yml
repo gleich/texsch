@@ -1,7 +1,7 @@
 release:
   github:
     owner: Matt-Gleich
-    name: {{ PROJECT_NAME }}
+    name: texsch
   prerelease: auto
 before:
   hooks:
@@ -24,7 +24,7 @@ brews:
       name: homebrew-taps
     folder: Formula
     homepage: 'https://mattglei.ch'
-    description: '{{ PROJECT_DESCRIPTION }}'
+    description: 'Automation for techy students that write papers for high school in LaTeX'
     commit_author:
       name: Matt-Gleich
       email: matthewgleich@gmail.com

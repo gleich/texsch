@@ -1,8 +1,8 @@
-# {{ PROJECT_NAME }}
+# texsch
 
-{{ PROJECT_DESCRIPTION }}
+Automation for techy students that write papers for high school in LaTeX'
 
-![goreleaser format](https://github.com/Matt-Gleich/{{ PROJECT_NAME }}/workflows/goreleaser%20format/badge.svg) ![Go Build](https://github.com/Matt-Gleich/{{ PROJECT_NAME }}/workflows/Go%20Build/badge.svg) ![Format](https://github.com/Matt-Gleich/{{ PROJECT_NAME }}/workflows/Format/badge.svg) ![goreleaser](https://github.com/Matt-Gleich/go_template/workflows/{{ PROJECT_NAME }}/badge.svg)
+![goreleaser format](https://github.com/Matt-Gleich/texsch/workflows/goreleaser%20format/badge.svg) ![Go Build](https://github.com/Matt-Gleich/texsch/workflows/Go%20Build/badge.svg) ![Format](https://github.com/Matt-Gleich/texsch/workflows/Format/badge.svg) ![goreleaser](https://github.com/Matt-Gleich/go_template/workflows/texsch/badge.svg)
 
 ## Contributors
 
