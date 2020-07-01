@@ -3,7 +3,7 @@ name: Go test
 on: ['push', 'pull_request']
 
 jobs:
-  release:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -16,11 +16,6 @@ jobs:
         with:
           go-version: ^1.13
       - name: Go dependencies
-        run: |
-          go get -v -t -d ./...
-          if [ -f Gopkg.toml ]; then
-              curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-              dep ensure
-          fi
+        run: go get -v -t -d ./...
       - name: Go test
         run: go test ./...
