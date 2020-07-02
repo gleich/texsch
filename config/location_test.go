@@ -17,7 +17,7 @@ func TestPath(t *testing.T) {
 // Create ... Test for the Create function
 func TestCreate(t *testing.T) {
 	path := Path()
-	Create(path)
+	Create(path, false)
 	_, err := os.Stat(path)
 	if os.IsNotExist(err) {
 		t.Error("Path does not exist")

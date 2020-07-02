@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/Matt-Gleich/statuser"
+	"github.com/manifoldco/promptui"
 )
 
 const fileName = "config.yml"
@@ -23,7 +24,23 @@ func Path() string {
 }
 
 // Create ... Create the config file
-func Create(path string) {
+func Create(path string, askUser bool) {
+	if askUser {
+		_, err := os.Stat(path)
+		if os.IsNotExist(err) {
+			prompt := promptui.Select{
+				Label: "The config already exits. Do ou want to override it?",
+				Items: []string{"Yes", "No"},
+			}
+			_, result, err := prompt.Run()
+			if err != nil {
+				statuser.Error("Failed to load prompt", err, 1)
+			}
+			if result == "No" {
+				os.Exit(1)
+			}
+		}
+	}
 	folderPath := strings.TrimSuffix(path, fileName)
 	err := os.MkdirAll(folderPath, 0700)
 	if err != nil {
