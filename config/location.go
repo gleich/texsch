@@ -27,9 +27,9 @@ func Path() string {
 func Create(path string, askUser bool) {
 	if askUser {
 		_, err := os.Stat(path)
-		if os.IsNotExist(err) {
+		if !os.IsNotExist(err) {
 			prompt := promptui.Select{
-				Label: "The config already exits. Do ou want to override it?",
+				Label: "The config already exits. Do you want to reset it?",
 				Items: []string{"Yes", "No"},
 			}
 			_, result, err := prompt.Run()
@@ -37,7 +37,7 @@ func Create(path string, askUser bool) {
 				statuser.Error("Failed to load prompt", err, 1)
 			}
 			if result == "No" {
-				os.Exit(1)
+				os.Exit(0)
 			}
 		}
 	}
