@@ -1,8 +1,10 @@
-name: Format
+name: format
 
 on:
-  - push
-  - pull_request
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
 
 jobs:
   gofmt:

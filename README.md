@@ -2,10 +2,10 @@
 
 Automation for techy students that write papers for high school in LaTeX
 
-![Go Build](https://github.com/Matt-Gleich/texsch/workflows/Go%20Build/badge.svg)
-![Format](https://github.com/Matt-Gleich/texsch/workflows/Format/badge.svg)
-![goreleaser](https://github.com/Matt-Gleich/texsch/workflows/goreleaser/badge.svg)
-![Go test](https://github.com/Matt-Gleich/texsch/workflows/Go%20test/badge.svg)
+![build](https://github.com/Matt-Gleich/texsch/workflows/build/badge.svg)
+![format](https://github.com/Matt-Gleich/texsch/workflows/format/badge.svg)
+![release](https://github.com/Matt-Gleich/texsch/workflows/release/badge.svg)
+![test](https://github.com/Matt-Gleich/texsch/workflows/test/badge.svg)
 
 ## ❓ Why
 
@@ -28,5 +28,5 @@ classes:
 
 ## Contributors
 
-1. Matthew Gleich ([@Matt-Gleich]("http://www.github.com/Matt-Gleich"))
+1. Matthew Gleich ([@Matt-Gleich](http://www.github.com/Matt-Gleich))
 2. This could be you!
