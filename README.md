@@ -25,3 +25,11 @@ classes:
   - Biology 10 Honors:
     period: 2
 ```
+
+<!-- DO NOT REMOVE - contributor_list:start -->
+## 👥 Contributors
+
+
+- **[@Matt-Gleich](https://github.com/Matt-Gleich)** (18 contributions)
+
+<!-- DO NOT REMOVE - contributor_list:end -->
