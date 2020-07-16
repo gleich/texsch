@@ -25,8 +25,3 @@ classes:
   - Biology 10 Honors:
     period: 2
 ```
-
-## Contributors
-
-1. Matthew Gleich ([@Matt-Gleich](http://www.github.com/Matt-Gleich))
-2. This could be you!
