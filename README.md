@@ -1,3 +1,4 @@
+<!-- DO NOT REMOVE - contributor_list:data:start:["Matt-Gleich"]:end -->
 # texsch
 
 Automation for techy students that write papers for high school in LaTeX
@@ -30,6 +31,6 @@ classes:
 ## 👥 Contributors
 
 
-- **[@Matt-Gleich](https://github.com/Matt-Gleich)** (18 contributions)
+- **[@Matt-Gleich](https://github.com/Matt-Gleich)**
 
 <!-- DO NOT REMOVE - contributor_list:end -->
