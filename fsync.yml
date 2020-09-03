@@ -3,7 +3,7 @@ replace:
   - before: project_name
     after: texsch
   - before: project_description
-    after: Automation for techy students that write papers for high school in LaTeX
+    after: 🏫 Automation for techy students that write papers for high school in LaTeX
   - before: github_username
     after: Matt-Gleich
   - before: project_author_email
