@@ -1,6 +1,6 @@
 module github.com/Matt-Gleich/texsch
 
-go 1.14
+go 1.15
 
 require (
 	github.com/Matt-Gleich/statuser v1.0.1
