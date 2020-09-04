@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/Matt-Gleich/statuser"
+	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/spf13/cobra"
 )
 
@@ -9,7 +9,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use: "texsch",
 	Long: `
-Automation for techy students that write papers for high school in LaTeX
+🏫 Automation for techy students that write papers for high school in LaTeX
 
 🐙 Repository: https://github.com/Matt-Gleich/texsch
 📟 Authors:
