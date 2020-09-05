@@ -1,10 +1,6 @@
 name: test
 
-on:
-  push:
-  pull_request:
-  schedule:
-    - cron: '0 * * * *' # Runs every hour
+on: push
 
 jobs:
   test:
@@ -13,13 +9,16 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: ^1.13
-      - name: Get Dependencies
-        run: go get -v -t -d ./...
-      - name: Go Test
-        run: go test ./...
+          go-version: ^1.15
+      - run: make test-go
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - run: make test-in-docker
