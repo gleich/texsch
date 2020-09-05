@@ -41,3 +41,5 @@ files:
     source: https://github.com/Matt-Gleich/go_template/blob/master/dev.Dockerfile
   - path: .dockerignore
     source: https://github.com/Matt-Gleich/go_template/blob/master/.dockerignore
+  - path: Makefile
+    source: https://github.com/Matt-Gleich/go_template/blob/master/Makefile
