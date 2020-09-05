@@ -14,6 +14,7 @@ var configureCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(configure.General())
 		fmt.Println(configure.Classes())
+		fmt.Println(configure.Templates())
 	},
 }
 
