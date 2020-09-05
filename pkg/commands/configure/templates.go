@@ -1,8 +1,6 @@
 package configure
 
 import (
-	"fmt"
-
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
 )
@@ -13,7 +11,6 @@ type TemplatesAnswers struct {
 }
 
 func Templates() TemplatesAnswers {
-	fmt.Println()
 	var defaults bool
 	prompt := &survey.Confirm{
 		Message: "Do you want to use the default templates?",
@@ -23,6 +20,7 @@ func Templates() TemplatesAnswers {
 		statuser.Error("Failed to ask about default template use", err, 1)
 	}
 	if !defaults {
+		stepLine()
 		return TemplatesAnswers{}
 	}
 
@@ -34,6 +32,7 @@ func Templates() TemplatesAnswers {
 	if err != nil {
 		statuser.Error("Failed to ask about emoji use for the template", err, 1)
 	}
+	stepLine()
 	return TemplatesAnswers{
 		Defaults: defaults,
 		Emojis:   emojis,

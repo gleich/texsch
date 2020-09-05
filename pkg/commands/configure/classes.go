@@ -9,18 +9,17 @@ import (
 
 // Class outline
 type Class struct {
-	Name        string
-	Time        string
-	TeacherName string
+	Name         string
+	Time         string
+	Teacher_Name string
 }
 
 func Classes() []Class {
+	stepLine()
 	fmt.Println(
 		`
-————————————————————————————————————————————————————————
 We are now going to configure classes.
-Once you are done just enter nothing for the class name.
-————————————————————————————————————————————————————————`,
+Once you are done just enter nothing for the class name.`,
 	)
 	return askClasses()
 }
@@ -38,6 +37,7 @@ func askClasses() []Class {
 			statuser.Error("Failed to ask what the name of the class is", err, 1)
 		}
 		if className == "" {
+			stepLine()
 			break
 		}
 		questions := []*survey.Question{
@@ -47,7 +47,7 @@ func askClasses() []Class {
 				Validate: survey.Required,
 			},
 			{
-				Name:     "teacherName",
+				Name:     "teacher_name",
 				Prompt:   &survey.Input{Message: "What is the name of your teacher (with title prefix; i.e. Mr. or Ms.)?"},
 				Validate: survey.Required,
 			},
@@ -57,7 +57,7 @@ func askClasses() []Class {
 		if err != nil {
 			statuser.Error("Failed to ask question about class", err, 1)
 		}
-		classes = append(classes, Class{className, answers.Time, answers.TeacherName})
+		classes = append(classes, Class{className, answers.Time, answers.Teacher_Name})
 	}
 	return classes
 }

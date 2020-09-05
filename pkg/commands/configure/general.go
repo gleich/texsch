@@ -9,8 +9,8 @@ import (
 
 // General answers outline
 type GeneralAnswers struct {
-	FullName string
-	Year     string
+	Full_Name string
+	Year      string
 }
 
 // Configure general information
@@ -35,7 +35,7 @@ func checkProjectRoot() {
 	// Asking question
 	var projectRoot bool
 	prompt := &survey.Confirm{
-		Message: "Are currently at the root of your project?",
+		Message: "Are you currently at the root of your project?",
 		Help:    "All of the configuration for your project will be held in a folder called texsch. In order to have that folder be in the correct location you need to make sure it is at the root of your project. Other files located at the root of your project are READMEs or LICENSEs.",
 	}
 	err = survey.AskOne(prompt, &projectRoot)
@@ -51,7 +51,7 @@ func checkProjectRoot() {
 func ask() GeneralAnswers {
 	questions := []*survey.Question{
 		{
-			Name:      "fullname",
+			Name:      "full_name",
 			Prompt:    &survey.Input{Message: "What is your first and last name?"},
 			Validate:  survey.Required,
 			Transform: survey.Title,
