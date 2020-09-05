@@ -17,10 +17,10 @@ type Class struct {
 func Classes() []Class {
 	fmt.Println(
 		`
-——————————————————————————————————————————————————
+————————————————————————————————————————————————————————
 We are now going to configure classes.
-Once you are done just enter nothing for the name.
-——————————————————————————————————————————————————`,
+Once you are done just enter nothing for the class name.
+————————————————————————————————————————————————————————`,
 	)
 	return askClasses()
 }
