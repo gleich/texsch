@@ -7,14 +7,14 @@ import (
 	"github.com/Matt-Gleich/statuser/v2"
 )
 
-// GeneralQuestion outline
-type GeneralQuestions struct {
+// General answers outline
+type GeneralAnswers struct {
 	FullName string
 	Year     string
 }
 
 // Configure general information
-func General() GeneralQuestions {
+func General() GeneralAnswers {
 	checkProjectRoot()
 	return ask()
 }
@@ -48,7 +48,7 @@ func checkProjectRoot() {
 }
 
 // Ask the questions
-func ask() GeneralQuestions {
+func ask() GeneralAnswers {
 	questions := []*survey.Question{
 		{
 			Name:      "fullname",
@@ -64,7 +64,7 @@ func ask() GeneralQuestions {
 			},
 		},
 	}
-	var answers GeneralQuestions
+	var answers GeneralAnswers
 	err := survey.Ask(questions, &answers)
 	if err != nil {
 		statuser.Error("Failed to ask general questions", err, 1)

@@ -13,6 +13,7 @@ var configureCmd = &cobra.Command{
 	Short: "Configure texsch with an interactive prompt",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(configure.General())
+		fmt.Println(configure.Classes())
 	},
 }
 
