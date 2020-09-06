@@ -9,6 +9,7 @@ import (
 
 const EnvKey = "TEXSCH_PATH"
 
+// Set the project root environment variable
 func Set() {
 	cwd, err := os.Getwd()
 	if err != nil {

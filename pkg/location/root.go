@@ -1,4 +1,4 @@
-package check
+package location
 
 import (
 	"io/ioutil"
@@ -8,7 +8,8 @@ import (
 	"github.com/Matt-Gleich/texsch/pkg/commands/set_root"
 )
 
-func ConfirmRoot() {
+// Change directory to configured project root
+func ChdirProjectRoot() {
 	// Checking if texsch folder already exists
 	files, err := ioutil.ReadDir("./")
 	if err != nil {

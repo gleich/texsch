@@ -11,6 +11,7 @@ type TemplatesAnswers struct {
 	Emojis   bool
 }
 
+// Configure the templates
 func Templates() TemplatesAnswers {
 	status.Step("🖨", "Template Configuration")
 	var defaults bool

@@ -22,6 +22,7 @@ func Write(generalConfig GeneralAnswers, classes []Class, templatesConfig Templa
 	writeTemplates(templatesConfig)
 }
 
+// Get confirmation from the user to the write the changes
 func confirm() {
 	var permToWrite bool
 	prompt := &survey.Confirm{

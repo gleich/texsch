@@ -15,6 +15,7 @@ type Class struct {
 	Teacher_Name string
 }
 
+// Configure the classes
 func Classes() []Class {
 	status.Step("📚", "Class Configuration")
 	fmt.Println(
@@ -24,6 +25,7 @@ Once you are done just enter nothing for the class name.`,
 	return askClasses()
 }
 
+// Ask about the classes
 func askClasses() []Class {
 	classes := []Class{}
 	for {
