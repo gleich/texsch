@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/Matt-Gleich/statuser/v2"
+	"github.com/Matt-Gleich/texsch/pkg/check"
 	"github.com/spf13/cobra"
 )
 
@@ -26,6 +27,7 @@ var rootCmd = &cobra.Command{
 
 // Execute the main command
 func Execute() {
+	check.ConfirmRoot()
 	if err := rootCmd.Execute(); err != nil {
 		statuser.Error("Failed to execute root command", err, 1)
 	}
