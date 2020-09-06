@@ -8,7 +8,8 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use: "texsch",
+	Use:   "texsch",
+	Short: "🏫 Automation for techy students that write papers for high school in LaTeX",
 	Long: `
 🏫 Automation for techy students that write papers for high school in LaTeX
 
@@ -21,8 +22,7 @@ var rootCmd = &cobra.Command{
    ██║   █████╗   ╚███╔╝ ███████╗██║     ███████║
    ██║   ██╔══╝   ██╔██╗ ╚════██║██║     ██╔══██║
    ██║   ███████╗██╔╝ ██╗███████║╚██████╗██║  ██║
-   ╚═╝   ╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝
-	`,
+   ╚═╝   ╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝`,
 }
 
 // Execute the main command
