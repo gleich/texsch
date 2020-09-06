@@ -6,27 +6,48 @@ import (
 
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/set_root"
+	"gopkg.in/yaml.v3"
 )
+
+var GlobalConfigPath = getHomeDir() + "/.texsch.yaml"
 
 // Change directory to configured project root
 func ChdirProjectRoot() {
-	// Checking if texsch folder already exists
-	files, err := ioutil.ReadDir("./")
-	if err != nil {
-		statuser.Error("Failed to read current working directory", err, 1)
-	}
-	for _, f := range files {
-		if f.IsDir() && f.Name() == "texsch" {
-			return
-		}
-	}
-	envPath := os.Getenv(set_root.EnvKey)
-	if envPath == "" {
-		set_root.Set()
-	}
-
-	err = os.Chdir(envPath)
+	path := GetProjectRoot()
+	err := os.Chdir(path)
 	if err != nil {
 		statuser.Error("Failed to change directory to project root", err, 1)
 	}
+}
+
+// Get the project root path from the global config
+func GetProjectRoot() string {
+	var path string
+	_, err := ioutil.ReadFile(GlobalConfigPath)
+	if err != nil {
+		path = set_root.Set(GlobalConfigPath)
+	} else {
+		data, err := ioutil.ReadFile(GlobalConfigPath)
+		if err != nil {
+			statuser.Error("Failed to read from global config file", err, 1)
+		}
+		globalConfig := struct {
+			Path string `yaml:"path"`
+		}{}
+		err = yaml.Unmarshal(data, &globalConfig)
+		if err != nil {
+			statuser.Error("Failed to parse yaml from global config file", err, 1)
+		}
+		path = globalConfig.Path
+	}
+	return path
+}
+
+// Get user's home directory
+func getHomeDir() string {
+	homeDir, err := os.UserHomeDir()
+	if err != nil {
+		statuser.Error("Failed to get home working directory", err, 1)
+	}
+	return homeDir
 }

@@ -1,16 +1,17 @@
 package set_root
 
 import (
+	"io/ioutil"
 	"os"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
+	"github.com/Matt-Gleich/texsch/pkg/status"
+	"gopkg.in/yaml.v3"
 )
 
-const EnvKey = "TEXSCH_PATH"
-
 // Set the project root environment variable
-func Set() {
+func Set(fPath string) string {
 	cwd, err := os.Getwd()
 	if err != nil {
 		statuser.Error("Failed to get current working directory", err, 1)
@@ -29,8 +30,19 @@ func Set() {
 	if !confirmed {
 		statuser.ErrorMsg("Please change directory into the root of your project", 1)
 	}
-	err = os.Setenv(EnvKey, cwd)
+
+	yamlContent, err := yaml.Marshal(map[string]string{
+		"path": cwd,
+	})
 	if err != nil {
-		statuser.Error("Failed to set current working directory in environment variable", err, 1)
+		statuser.Error("Failed to create yaml from path data", err, 1)
 	}
+
+	err = ioutil.WriteFile(fPath, []byte(yamlContent), 0700)
+	if err != nil {
+		statuser.Error("Failed to write project root path to global config", err, 1)
+	}
+
+	status.Success("Set project root")
+	return cwd
 }

@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"github.com/Matt-Gleich/texsch/pkg/commands/set_root"
 	"github.com/spf13/cobra"
 )
 
@@ -17,7 +16,6 @@ You will need to do this if you ever move the location of your project on your c
 or plan to run texsch commands on another project.
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		set_root.Set()
 	},
 }
 
