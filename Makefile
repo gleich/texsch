@@ -2,8 +2,6 @@
 # Building
 ##########
 
-build-docker-prod:
-	docker build -t mattgleich/texsch:latest .
 build-docker-dev:
 	docker build -f dev.Dockerfile -t mattgleich/texsch:test .
 build-docker-dev-lint:
@@ -26,7 +24,6 @@ lint-gomod:
 lint-goreleaser:
 	goreleaser check
 lint-hadolint:
-	hadolint Dockerfile
 	hadolint dev.Dockerfile
 	hadolint dev.lint.Dockerfile
 lint-in-docker: build-docker-dev-lint
@@ -53,4 +50,4 @@ docker-test: test-in-docker
 local-lint: lint-golangci lint-goreleaser lint-hadolint lint-gomod
 docker-lint: lint-in-docker
 # Build
-local-build: build-docker-prod build-docker-dev build-docker-dev-lint
+local-build: build-docker-dev build-docker-dev-lint
