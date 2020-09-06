@@ -14,6 +14,7 @@ import (
 
 // Write the changes to the files
 func Write(generalConfig GeneralAnswers, classes []Class, templatesConfig TemplatesAnswers) {
+	status.Step("✍️", "Writing Changes")
 	confirm()
 	createFolder()
 	writeYaml(generalConfig, "texsch/configuration.yaml")

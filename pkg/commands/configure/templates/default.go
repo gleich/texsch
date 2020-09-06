@@ -1,7 +1,6 @@
 package templates
 
-const DefaultPlainVersion = `
-\documentclass[12pt]{report}
+const DefaultPlainVersion = `\documentclass[12pt]{report}
 \title{ASSIGNMENT_NAME}
 \author{CLASS_NAME \\ CLASS_TIME \\ CLASS_TEACHER}
 \date{DATE}
@@ -71,8 +70,7 @@ const DefaultPlainVersion = `
 % ! Copyright (c) YEAR_NUMBER AUTHOR_FULL_NAME
 `
 
-const DefaultEmojiVersion = `
-\documentclass[12pt]{report}
+const DefaultEmojiVersion = `\documentclass[12pt]{report}
 \title{ASSIGNMENT_NAME}
 \author{CLASS_NAME \\ CLASS_TIME \\ CLASS_TEACHER}
 \date{DATE}

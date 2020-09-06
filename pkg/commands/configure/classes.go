@@ -5,6 +5,7 @@ import (
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
+	"github.com/Matt-Gleich/texsch/pkg/status"
 )
 
 // Class outline
@@ -15,10 +16,9 @@ type Class struct {
 }
 
 func Classes() []Class {
-	stepLine()
+	status.Step("📚", "Class Configuration")
 	fmt.Println(
-		`
-We are now going to configure classes.
+		`We are now going to configure classes.
 Once you are done just enter nothing for the class name.`,
 	)
 	return askClasses()
@@ -37,7 +37,6 @@ func askClasses() []Class {
 			statuser.Error("Failed to ask what the name of the class is", err, 1)
 		}
 		if className == "" {
-			stepLine()
 			break
 		}
 		questions := []*survey.Question{

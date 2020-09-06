@@ -5,6 +5,7 @@ import (
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
+	"github.com/Matt-Gleich/texsch/pkg/status"
 )
 
 // General answers outline
@@ -15,6 +16,7 @@ type GeneralAnswers struct {
 
 // Configure general information
 func General() GeneralAnswers {
+	status.Step("⚙️", "General Configuration")
 	checkProjectRoot()
 	return ask()
 }
