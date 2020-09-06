@@ -9,16 +9,28 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// Read from the configuration.yaml file
+func GetGeneral() configure.GeneralAnswers {
+	var data configure.GeneralAnswers
+	readYAML("/texsch/configuration.yaml", &data)
+	return data
+}
+
 // Read from the classes.yaml file
 func GetClasses() []configure.Class {
-	data, err := ioutil.ReadFile(location.GetProjectRoot() + "/texsch/classes.yaml")
+	var data []configure.Class
+	readYAML("/texsch/classes.yaml", &data)
+	return data
+}
+
+// Read from a yaml file
+func readYAML(fPath string, out interface{}) {
+	data, err := ioutil.ReadFile(location.GetProjectRoot() + fPath)
 	if err != nil {
 		statuser.Error("Failed to read from classes.yaml file", err, 1)
 	}
-	var content []configure.Class
-	err = yaml.Unmarshal(data, &content)
+	err = yaml.Unmarshal(data, out)
 	if err != nil {
 		statuser.Error("Failed to parse yaml file", err, 1)
 	}
-	return content
 }

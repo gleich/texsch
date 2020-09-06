@@ -37,7 +37,7 @@ const DefaultPlainVersion = `\documentclass[12pt]{report}
 \rfoot{Page \thepage}                 % Page footer configuration
 
 % ? Dynamic Configuration:
-\rhead{date}
+\rhead{DATE}
 \graphicspath{{../../../Images/
 
 % ? Commands:
@@ -107,7 +107,7 @@ const DefaultEmojiVersion = `\documentclass[12pt]{report}
 \rfoot{Page \thepage}                 % 🏈 Page footer configuration
 
 % ? ⚙️ Dynamic Configuration:
-\rhead{date}
+\rhead{DATE}
 \graphicspath{{../../../Images/
 
 % ? 🐚 Commands:
