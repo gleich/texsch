@@ -26,7 +26,6 @@ func Set(fPath string) string {
 	if err != nil {
 		statuser.Error("Failed to ask user if current directory is project root", err, 1)
 	}
-
 	if !confirmed {
 		statuser.ErrorMsg("Please change directory into the root of your project", 1)
 	}

@@ -9,7 +9,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-var GlobalConfigPath = getHomeDir() + "/.texsch.yaml"
+var GlobalConfigPath = GetHomeDir() + "/.texsch.yaml"
 
 // Change directory to configured project root
 func ChdirProjectRoot() {
@@ -44,7 +44,7 @@ func GetProjectRoot() string {
 }
 
 // Get user's home directory
-func getHomeDir() string {
+func GetHomeDir() string {
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
 		statuser.Error("Failed to get home working directory", err, 1)

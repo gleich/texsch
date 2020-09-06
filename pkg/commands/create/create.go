@@ -11,6 +11,7 @@ import (
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
 	"github.com/Matt-Gleich/texsch/pkg/configuration"
+	"github.com/Matt-Gleich/texsch/pkg/location"
 	"github.com/Matt-Gleich/texsch/pkg/status"
 	"github.com/dustin/go-humanize"
 )
@@ -166,5 +167,5 @@ func createFile(answers DocumentOutline, folderPath string) {
 	if err != nil {
 		statuser.Error("Failed to write to file", err, 1)
 	}
-	status.Success("Created file in " + folderPath)
+	status.Success("Created file in " + location.GetProjectRoot() + "/" + folderPath)
 }

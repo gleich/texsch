@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
+	"github.com/Matt-Gleich/texsch/pkg/location"
 	"github.com/spf13/cobra"
 )
 
@@ -26,6 +27,7 @@ Configure the following for texsch:
 
 `,
 	Run: func(cmd *cobra.Command, args []string) {
+		location.ChdirProjectRoot()
 		configure.Write(
 			configure.General(),
 			configure.Classes(),

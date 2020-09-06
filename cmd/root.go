@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/location"
 	"github.com/spf13/cobra"
 )
 
@@ -27,7 +26,6 @@ var rootCmd = &cobra.Command{
 
 // Execute the main command
 func Execute() {
-	location.ChdirProjectRoot()
 	if err := rootCmd.Execute(); err != nil {
 		statuser.Error("Failed to execute root command", err, 1)
 	}
