@@ -143,13 +143,28 @@ func createFile(answers DocumentOutline, folderPath string) {
 	}
 
 	// Creating the actual file
+	filePath := folderPath + strings.ReplaceAll(answers.Name, " ", "-") + ".tex"
+	_, err = os.Stat(filePath)
+	if !os.IsNotExist(err) {
+		var override bool
+		prompt := &survey.Confirm{
+			Message: "A file with that name already exits. Do you want to override it?",
+		}
+		err := survey.AskOne(prompt, &override)
+		if err != nil {
+			statuser.Error("Failed ask if you want to override the file", err, 1)
+		}
+		if !override {
+			os.Exit(0)
+		}
+	}
 	err = ioutil.WriteFile(
-		folderPath+strings.ReplaceAll(answers.Name, " ", "-")+".tex",
+		filePath,
 		[]byte(filledInDocument),
 		0700,
 	)
 	if err != nil {
 		statuser.Error("Failed to write to file", err, 1)
 	}
-	status.Success("Create file in " + folderPath)
+	status.Success("Created file in " + folderPath)
 }
