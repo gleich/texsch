@@ -79,7 +79,7 @@ func writeTemplates(templatesConfig TemplatesAnswers) {
 	if templatesConfig.Emojis {
 		files["default.txt"] = []byte(templates.DefaultEmojiVersion)
 	} else {
-		files["default.txt"] = []byte(templates.DefaultEmojiVersion)
+		files["default.txt"] = []byte(templates.DefaultPlainVersion)
 	}
 
 	for fileName, fileContent := range files {
