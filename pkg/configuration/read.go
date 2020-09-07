@@ -3,7 +3,7 @@ package configuration
 import (
 	"io/ioutil"
 
-	"github.com/Matt-Gleich/statuser"
+	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
 	"github.com/Matt-Gleich/texsch/pkg/location"
 	"gopkg.in/yaml.v3"

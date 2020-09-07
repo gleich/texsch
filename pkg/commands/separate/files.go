@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/Matt-Gleich/logoru"
-	"github.com/Matt-Gleich/statuser"
+	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/status"
 )
 
