@@ -1,4 +1,6 @@
 texsch/
+LaTeX/
+PDF/
 
 # goreleaser
 dist/

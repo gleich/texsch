@@ -4,8 +4,10 @@ go 1.15
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.1.1
+	github.com/Matt-Gleich/logoru v0.0.0-20200904210752-deb4c45dfe26
 	github.com/Matt-Gleich/statuser v1.0.1
 	github.com/Matt-Gleich/statuser/v2 v2.0.1
+	github.com/Matt-Gleich/texsep v1.6.0 // indirect
 	github.com/dustin/go-humanize v1.0.0
 	github.com/fatih/color v1.9.0
 	github.com/mattn/go-colorable v0.1.7 // indirect
