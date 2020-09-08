@@ -56,7 +56,7 @@ func WriteFileSafely(path string, content []byte, relative bool, output bool) {
 		}
 	}
 
-	err = ioutil.WriteFile(path, content, 0644)
+	err = ioutil.WriteFile(path, content, 0666)
 	if err != nil {
 		statuser.Error("Failed to write to file at "+path, err, 1)
 	}

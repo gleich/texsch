@@ -10,6 +10,10 @@ build-go:
 	go get -v -t -d ./...
 	go build -v .
 	rm texsch
+build-local-path:
+	rm -f /usr/local/bin/texsch
+	go build -o texsch .
+	mv texsch /usr/local/bin
 
 #########
 # Linting

@@ -37,7 +37,7 @@ func Set(fPath string) string {
 		statuser.Error("Failed to create yaml from path data", err, 1)
 	}
 
-	err = ioutil.WriteFile(fPath, []byte(yamlContent), 0644)
+	err = ioutil.WriteFile(fPath, []byte(yamlContent), 0666)
 	if err != nil {
 		statuser.Error("Failed to write project root path to global config", err, 1)
 	}

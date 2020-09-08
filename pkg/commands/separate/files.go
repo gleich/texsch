@@ -35,26 +35,34 @@ func Files() (filePaths []string) {
 func MoveFiles(filePaths []string, loop bool) {
 	for _, filePath := range filePaths {
 		var prefix string
+
+		const (
+			latexPrefix = "LaTeX/"
+			pdfPrefix   = "PDF/"
+		)
 		if strings.HasSuffix(filePath, ".tex") {
-			latexPrefix := "LaTeX/"
 			if strings.HasPrefix(filePath, latexPrefix) {
 				continue
 			}
 			prefix = latexPrefix
 		} else if strings.HasSuffix(filePath, ".pdf") {
-			pdfPrefix := "PDF/"
 			if strings.HasPrefix(filePath, pdfPrefix) {
 				continue
 			}
 			prefix = pdfPrefix
 		}
-		fileFolderPathChunks := strings.Split(filePath, "/")
-		fileFolderPath := prefix + strings.Join(fileFolderPathChunks[:len(fileFolderPathChunks)-1], "/") + "/"
-		fileName := fileFolderPathChunks[len(fileFolderPathChunks)-1]
+
+		cleanedFilePath := filePath
+		cleanedFilePath = strings.TrimPrefix(cleanedFilePath, latexPrefix)
+		cleanedFilePath = strings.TrimPrefix(cleanedFilePath, pdfPrefix)
+
+		pathChunks := strings.Split(cleanedFilePath, "/")
+		fileFolderPath := prefix + strings.Join(pathChunks[:len(pathChunks)-1], "/") + "/"
+		fileName := pathChunks[len(pathChunks)-1]
 
 		_, err := os.Stat(fileFolderPath)
 		if os.IsNotExist(err) {
-			err := os.MkdirAll(fileFolderPath, 0655)
+			err := os.MkdirAll(fileFolderPath, 0700)
 			if err != nil {
 				statuser.Error("Failed to make folders", err, 1)
 			}
