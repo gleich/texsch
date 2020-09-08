@@ -36,7 +36,7 @@ const DefaultPlainVersion = `\documentclass[12pt]{report}
 \rfoot{Page \thepage}                 % Page footer configuration
 
 % ? Dynamic Configuration:
-\rhead{DATE}
+\rhead{ASSIGNMENT_NAME}
 \lhead{AUTHOR_FULL_NAME}
 
 % ? Commands:
