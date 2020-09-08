@@ -30,17 +30,33 @@ func askClasses() []Class {
 	classes := []Class{}
 	for {
 		fmt.Println()
-		var className string
-		prompt := &survey.Input{
-			Message: "What is the name of the class?",
+		var (
+			className string
+			prompt    []*survey.Question
+			message   string = "What is the name of the class?"
+		)
+		if len(classes) == 0 {
+			prompt = []*survey.Question{
+				{
+					Prompt:   &survey.Input{Message: message},
+					Validate: survey.Required,
+				},
+			}
+		} else {
+			prompt = []*survey.Question{
+				{
+					Prompt: &survey.Input{Message: message},
+				},
+			}
 		}
-		err := survey.AskOne(prompt, &className)
+		err := survey.Ask(prompt, &className)
 		if err != nil {
 			statuser.Error("Failed to ask what the name of the class is", err, 1)
 		}
 		if className == "" {
 			break
 		}
+
 		questions := []*survey.Question{
 			{
 				Name:     "time",
