@@ -1,4 +1,4 @@
-package set_root
+package setroot
 
 import (
 	"io/ioutil"

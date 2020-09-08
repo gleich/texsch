@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/commands/set_root"
+	"github.com/Matt-Gleich/texsch/pkg/commands/setroot"
 	"gopkg.in/yaml.v3"
 )
 
@@ -25,7 +25,7 @@ func GetProjectRoot() string {
 	var path string
 	_, err := ioutil.ReadFile(GlobalConfigPath)
 	if err != nil {
-		path = set_root.Set(GlobalConfigPath)
+		path = setroot.Set(GlobalConfigPath)
 	} else {
 		data, err := ioutil.ReadFile(GlobalConfigPath)
 		if err != nil {
