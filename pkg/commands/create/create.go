@@ -11,8 +11,7 @@ import (
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
 	"github.com/Matt-Gleich/texsch/pkg/configuration"
-	"github.com/Matt-Gleich/texsch/pkg/location"
-	"github.com/Matt-Gleich/texsch/pkg/status"
+	"github.com/Matt-Gleich/texsch/pkg/utils"
 	"github.com/dustin/go-humanize"
 )
 
@@ -145,27 +144,5 @@ func createFile(answers DocumentOutline, folderPath string) {
 
 	// Creating the actual file
 	filePath := folderPath + strings.ReplaceAll(answers.Name, " ", "-") + ".tex"
-	_, err = os.Stat(filePath)
-	if !os.IsNotExist(err) {
-		var override bool
-		prompt := &survey.Confirm{
-			Message: "A file with that name already exits. Do you want to override it?",
-		}
-		err := survey.AskOne(prompt, &override)
-		if err != nil {
-			statuser.Error("Failed ask if you want to override the file", err, 1)
-		}
-		if !override {
-			os.Exit(0)
-		}
-	}
-	err = ioutil.WriteFile(
-		filePath,
-		[]byte(filledInDocument),
-		0700,
-	)
-	if err != nil {
-		statuser.Error("Failed to write to file", err, 1)
-	}
-	status.Success("Created file in " + location.GetProjectRoot() + "/" + folderPath)
+	utils.WriteFileSafely(filePath, []byte(filledInDocument), true, true)
 }

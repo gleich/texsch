@@ -54,7 +54,7 @@ func MoveFiles(filePaths []string, loop bool) {
 
 		_, err := os.Stat(fileFolderPath)
 		if os.IsNotExist(err) {
-			err := os.MkdirAll(fileFolderPath, 0700)
+			err := os.MkdirAll(fileFolderPath, 0655)
 			if err != nil {
 				statuser.Error("Failed to make folders", err, 1)
 			}

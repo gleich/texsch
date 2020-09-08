@@ -1,12 +1,12 @@
 package setroot
 
 import (
-	"io/ioutil"
 	"os"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/status"
+	"github.com/Matt-Gleich/texsch/pkg/utils"
 	"gopkg.in/yaml.v3"
 )
 
@@ -37,11 +37,7 @@ func Set(fPath string) string {
 		statuser.Error("Failed to create yaml from path data", err, 1)
 	}
 
-	err = ioutil.WriteFile(fPath, []byte(yamlContent), 0700)
-	if err != nil {
-		statuser.Error("Failed to write project root path to global config", err, 1)
-	}
-
+	utils.WriteFileSafely(fPath, []byte(yamlContent), false, false)
 	status.Success("Set project root")
 	return cwd
 }

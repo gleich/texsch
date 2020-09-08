@@ -2,13 +2,13 @@ package configure
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure/templates"
 	"github.com/Matt-Gleich/texsch/pkg/status"
+	"github.com/Matt-Gleich/texsch/pkg/utils"
 	"gopkg.in/yaml.v3"
 )
 
@@ -57,12 +57,7 @@ func writeYaml(data interface{}, fName string) {
 	if err != nil {
 		statuser.Error("Failed to create yaml for "+fName, err, 1)
 	}
-
-	err = ioutil.WriteFile(fName, []byte(yamlContent), 0700)
-	if err != nil {
-		statuser.Error("Failed to write yaml to "+fName, err, 1)
-	}
-	status.Success("Wrote to " + fName)
+	utils.WriteFileSafely(fName, []byte(yamlContent), true, true)
 }
 
 // Write the templates
@@ -85,11 +80,7 @@ func writeTemplates(templatesConfig TemplatesAnswers) {
 
 	for fileName, fileContent := range files {
 		filePath := "texsch/templates/" + fileName
-		err = ioutil.WriteFile(filePath, fileContent, 0700)
-		if err != nil {
-			statuser.Error("Failed to write to "+filePath, err, 1)
-		}
-		status.Success("Wrote to " + filePath)
+		utils.WriteFileSafely(filePath, fileContent, true, true)
 	}
 
 }
