@@ -1,4 +1,4 @@
-package init
+package initialize
 
 const GitIgnore = `# Miscellaneous
 *.class

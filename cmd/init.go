@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
-	"github.com/Matt-Gleich/texsch/pkg/commands/init"
+	"github.com/Matt-Gleich/texsch/pkg/commands/initialize"
 	"github.com/Matt-Gleich/texsch/pkg/commands/setroot"
 	"github.com/Matt-Gleich/texsch/pkg/configuration"
 	"github.com/Matt-Gleich/texsch/pkg/location"
@@ -15,7 +15,7 @@ import (
 
 // initCmd represents the init command
 var initCmd = &cobra.Command{
-	Use:   "init",
+	Use:   "initialize",
 	Short: "Initialize a repo with texsch",
 	Run: func(cmd *cobra.Command, args []string) {
 		setroot.Set(location.GlobalConfigPath)
@@ -25,9 +25,9 @@ var initCmd = &cobra.Command{
 			configure.Templates(),
 		)
 		fmt.Println()
-		utils.WriteFileSafely(`.gitignore`, []byte(init.GitIgnore), true, true)
+		utils.WriteFileSafely(`.gitignore`, []byte(initialize.GitIgnore), true, true)
 		generalConfig := configuration.GetGeneral()
-		utils.WriteFileSafely(`LICENSE`, []byte(strings.ReplaceAll(strings.ReplaceAll(init.LICENSE, "CURRENT_YEAR", generalConfig.Year), "FULL_NAME", generalConfig.Full_Name)), true, true)
+		utils.WriteFileSafely(`LICENSE`, []byte(strings.ReplaceAll(strings.ReplaceAll(initialize.LICENSE, "CURRENT_YEAR", generalConfig.Year), "FULL_NAME", generalConfig.Full_Name)), true, true)
 	},
 }
 
