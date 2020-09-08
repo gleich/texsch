@@ -2,7 +2,7 @@ package templates
 
 const DefaultPlainVersion = `\documentclass[12pt]{report}
 \title{ASSIGNMENT_NAME}
-\author{CLASS_NAME \\ CLASS_TIME \\ CLASS_TEACHER}
+\author{CLASS_NAME \\ CLASS_TEACHER}
 \date{DATE}
 
 % ? Packages:
@@ -33,12 +33,11 @@ const DefaultPlainVersion = `\documentclass[12pt]{report}
 \pagenumbering{Roman}                 % Page numbering
 \setlength{\headheight}{15pt}         % Page configuration
 \fancyhf{}                            % Page configuration
-\lhead{AUTHOR_FULL_NAME}              % Page head configuration
 \rfoot{Page \thepage}                 % Page footer configuration
 
 % ? Dynamic Configuration:
 \rhead{DATE}
-\graphicspath{{../../../Images/
+\lhead{AUTHOR_FULL_NAME}
 
 % ? Commands:
 \newcommand{\horizontalrule}{\noindent\makebox[\textwidth]{\rule{\textwidth}{0.6pt}}}   % Horizontal Line
@@ -72,7 +71,7 @@ const DefaultPlainVersion = `\documentclass[12pt]{report}
 
 const DefaultEmojiVersion = `\documentclass[12pt]{report}
 \title{ASSIGNMENT_NAME}
-\author{CLASS_NAME \\ CLASS_TIME \\ CLASS_TEACHER}
+\author{CLASS_NAME \\ CLASS_TEACHER}
 \date{DATE}
 
 % ? 📦 Packages:
@@ -103,12 +102,11 @@ const DefaultEmojiVersion = `\documentclass[12pt]{report}
 \pagenumbering{Roman}                 % 📄 Page numbering
 \setlength{\headheight}{15pt}         % 📄 Page configuration
 \fancyhf{}                            % 📄 Page configuration
-\lhead{AUTHOR_FULL_NAME}              % 😄 Page head configuration
 \rfoot{Page \thepage}                 % 🏈 Page footer configuration
 
 % ? ⚙️ Dynamic Configuration:
 \rhead{DATE}
-\graphicspath{{../../../Images/
+\lhead{AUTHOR_FULL_NAME}
 
 % ? 🐚 Commands:
 \newcommand{\horizontalrule}{\noindent\makebox[\textwidth]{\rule{\textwidth}{0.6pt}}}   % 📏 Horizontal Line

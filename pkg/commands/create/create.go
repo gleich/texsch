@@ -125,7 +125,6 @@ func createFile(answers DocumentOutline, folderPath string) {
 		"ASSIGNMENT_NAME":  answers.Name,
 		"AUTHOR_FULL_NAME": configuration.GetGeneral().Full_Name,
 		"CLASS_NAME":       class.Name,
-		"CLASS_TIME":       class.Time,
 		"CLASS_TEACHER":    class.Teacher_Name,
 		"DATE": fmt.Sprintf(
 			"%v, %v %v\\textsuperscript{%v}, %v",
