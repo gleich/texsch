@@ -42,9 +42,10 @@ func Document() {
 			Prompt: &survey.Select{
 				Message: "What is the type for the document?",
 				Options: []string{
-					"Paper",
 					"Notes",
+					"Worksheet",
 					"Practice",
+					"Paper",
 					"Assessment",
 					"Project",
 					"Presentation",
