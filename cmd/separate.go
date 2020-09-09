@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"time"
+
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/separate"
 	"github.com/Matt-Gleich/texsch/pkg/location"
@@ -21,6 +23,7 @@ var separateCmd = &cobra.Command{
 			for {
 				files := separate.Files()
 				separate.MoveFiles(files, true)
+				time.Sleep(10 * time.Second)
 			}
 		} else {
 			files := separate.Files()
