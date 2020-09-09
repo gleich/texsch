@@ -103,7 +103,7 @@ func createFile(answers DocumentOutline, folderPath string) {
 			Message: "What template would you like to use?",
 			Options: templates,
 		}
-		err := survey.AskOne(prompt, templateName)
+		err := survey.AskOne(prompt, &templateName)
 		if err != nil {
 			statuser.Error("Failed to ask what template you want to use", err, 1)
 		}
