@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"strings"
+	"time"
 
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
 	"github.com/Matt-Gleich/texsch/pkg/commands/initialize"
@@ -25,9 +25,28 @@ var initCmd = &cobra.Command{
 			configure.Templates(),
 		)
 		fmt.Println()
-		utils.WriteFileSafely(`.gitignore`, []byte(initialize.GitIgnore), true, true)
 		generalConfig := configuration.GetGeneral()
-		utils.WriteFileSafely(`LICENSE`, []byte(strings.ReplaceAll(strings.ReplaceAll(initialize.LICENSE, "CURRENT_YEAR", generalConfig.Year), "FULL_NAME", generalConfig.Full_Name)), true, true)
+
+		utils.WriteFileSafely(`.gitignore`, []byte(initialize.GitIgnore), true, true)
+
+		// LICENSE
+		filledInLICENSE := utils.ReplaceAllMapped(
+			initialize.LICENSE,
+			map[string]string{
+				"CURRENT_YEAR": fmt.Sprint(time.Now().Year()),
+				"FULL_NAME":    generalConfig.Full_Name,
+			},
+		)
+		utils.WriteFileSafely("LICENSE", []byte(filledInLICENSE), true, true)
+
+		// README
+		filledInREADME := utils.ReplaceAllMapped(
+			initialize.README,
+			map[string]string{
+				"SCHOOL_YEAR": generalConfig.School_Year,
+			},
+		)
+		utils.WriteFileSafely("README.md", []byte(filledInREADME), true, true)
 	},
 }
 

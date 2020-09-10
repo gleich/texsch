@@ -15,7 +15,7 @@ LaTeX, when used correctly, is way faster then other systems like google drive. 
 
 ## ⚠️ Notice
 
-I am refining and testing it on my setup and plan to release texsch in early october.
+I am refining and testing texsch on my setup and plan to release in early october.
 
 <!-- DO NOT REMOVE - contributor_list:start -->
 

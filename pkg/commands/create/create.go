@@ -122,25 +122,26 @@ func createFile(answers DocumentOutline, folderPath string) {
 		}
 	}
 	today := time.Now()
-	toReplace := map[string]string{
-		"ASSIGNMENT_NAME":  answers.Name,
-		"AUTHOR_FULL_NAME": configuration.GetGeneral().Full_Name,
-		"CLASS_NAME":       class.Name,
-		"CLASS_TEACHER":    class.Teacher_Name,
-		"DATE": fmt.Sprintf(
-			"%v, %v %v\\textsuperscript{%v}, %v",
-			today.Weekday(),
-			today.Month(),
-			today.Day(),
-			strings.TrimLeft(humanize.Ordinal(today.Day()), fmt.Sprint(today.Day())),
-			today.Year(),
-		),
-		"YEAR_NUMBER": fmt.Sprint(today.Year()),
-	}
-	filledInDocument := string(templateContent)
-	for key, value := range toReplace {
-		filledInDocument = strings.ReplaceAll(filledInDocument, key, value)
-	}
+	generalConfiguration := configuration.GetGeneral()
+	filledInDocument := utils.ReplaceAllMapped(
+		string(templateContent),
+		map[string]string{
+			"ASSIGNMENT_NAME":  answers.Name,
+			"AUTHOR_FULL_NAME": generalConfiguration.Full_Name,
+			"CLASS_NAME":       class.Name,
+			"CLASS_TEACHER":    class.Teacher_Name,
+			"DATE": fmt.Sprintf(
+				"%v, %v %v\\textsuperscript{%v}, %v",
+				today.Weekday(),
+				today.Month(),
+				today.Day(),
+				strings.TrimLeft(humanize.Ordinal(today.Day()), fmt.Sprint(today.Day())),
+				today.Year(),
+			),
+			"YEAR_NUMBER": fmt.Sprint(today.Year()),
+			"SCHOOL_YEAR": generalConfiguration.Full_Name,
+		},
+	)
 
 	// Creating the actual file
 	filePath := folderPath + strings.ReplaceAll(answers.Name, " ", "-") + ".tex"

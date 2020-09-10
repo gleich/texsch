@@ -8,8 +8,8 @@ import (
 
 // General answers outline
 type GeneralAnswers struct {
-	Full_Name string
-	Year      string
+	Full_Name   string
+	School_Year string
 }
 
 // Configure general information
