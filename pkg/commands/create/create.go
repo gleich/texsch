@@ -126,10 +126,11 @@ func createFile(answers DocumentOutline, folderPath string) {
 	filledInDocument := utils.ReplaceAllMapped(
 		string(templateContent),
 		map[string]string{
-			"ASSIGNMENT_NAME":  answers.Name,
-			"AUTHOR_FULL_NAME": generalConfiguration.Full_Name,
-			"CLASS_NAME":       class.Name,
-			"CLASS_TEACHER":    class.Teacher_Name,
+			"PATH_ASSIGNMENT-NAME": strings.ReplaceAll(answers.Name, " ", "-"),
+			"ASSIGNMENT_NAME":      answers.Name,
+			"AUTHOR_FULL_NAME":     generalConfiguration.Full_Name,
+			"CLASS_NAME":           class.Name,
+			"CLASS_TEACHER":        class.Teacher_Name,
 			"DATE": fmt.Sprintf(
 				"%v, %v %v\\textsuperscript{%v}, %v",
 				today.Weekday(),
@@ -138,8 +139,11 @@ func createFile(answers DocumentOutline, folderPath string) {
 				strings.TrimLeft(humanize.Ordinal(today.Day()), fmt.Sprint(today.Day())),
 				today.Year(),
 			),
-			"YEAR_NUMBER": fmt.Sprint(today.Year()),
-			"SCHOOL_YEAR": generalConfiguration.Full_Name,
+			"YEAR_NUMBER":     fmt.Sprint(today.Year()),
+			"SCHOOL_YEAR":     generalConfiguration.Full_Name,
+			"DOCUMENT_TYPE":   answers.Type,
+			"PATH_CLASS-NAME": strings.ReplaceAll(answers.Class, " ", "-"),
+			"MONTH_NAME":      today.Month().String(),
 		},
 	)
 
