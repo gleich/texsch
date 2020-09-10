@@ -72,10 +72,12 @@ func MoveFiles(filePaths []string, loop bool) {
 		if err != nil {
 			statuser.Error("Failed to move file", err, 1)
 		}
+
+		outputPath := strings.Join(pathChunks[2:], "/")
 		if loop {
-			logoru.Success("Moved", fileName)
+			logoru.Success("Moved", outputPath)
 		} else {
-			status.Success("Moved " + filePath)
+			status.Success("Moved " + outputPath)
 		}
 	}
 }
