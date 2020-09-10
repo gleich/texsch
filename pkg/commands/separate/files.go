@@ -73,7 +73,7 @@ func MoveFiles(filePaths []string, loop bool) {
 			statuser.Error("Failed to move file", err, 1)
 		}
 		if loop {
-			logoru.Success("Moved", filePath)
+			logoru.Success("Moved", fileName)
 		} else {
 			status.Success("Moved " + filePath)
 		}
