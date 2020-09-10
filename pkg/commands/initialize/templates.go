@@ -1,6 +1,6 @@
 package initialize
 
-const GitIgnore = `# Miscellaneous
+const gitIgnoreTemplate = `# Miscellaneous
 *.class
 *.log
 *.pyc
@@ -191,7 +191,7 @@ sympy-plots-for-*.tex/
 __latexindent_temp.tex
 `
 
-const LICENSE = `The MIT License (MIT)
+const licenseTemplate = `The MIT License (MIT)
 
 Copyright (c) CURRENT_YEAR FULL_NAME
 
@@ -214,4 +214,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 `
 
-const README = "# SCHOOL_YEAR\n"
+const readmeTemplate = "# SCHOOL_YEAR\n"
