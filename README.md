@@ -13,6 +13,10 @@ Automation for techy students that write papers for high school in LaTeX
 
 LaTeX, when used correctly, is way faster then other systems like google drive. Over the last year I've developed a system that makes it super easy to work with LaTeX and I am finally making a CLI for it all.
 
+## ⚠️ Notice
+
+I am refining and testing it on my setup and plan to release texsch in early october.
+
 <!-- DO NOT REMOVE - contributor_list:start -->
 
 ## 👥 Contributors
