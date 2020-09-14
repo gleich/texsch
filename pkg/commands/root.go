@@ -1,4 +1,4 @@
-package cmd
+package commands
 
 import (
 	"github.com/Matt-Gleich/statuser/v2"

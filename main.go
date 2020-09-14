@@ -1,7 +1,7 @@
 package main
 
-import "github.com/Matt-Gleich/texsch/cmd"
+import "github.com/Matt-Gleich/texsch/pkg/commands"
 
 func main() {
-	cmd.Execute()
+	commands.Execute()
 }
