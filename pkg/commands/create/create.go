@@ -49,6 +49,7 @@ func Document() {
 					"Assessment",
 					"Project",
 					"Presentation",
+					"Lab",
 					"Other",
 				},
 			},
