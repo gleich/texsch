@@ -3,7 +3,7 @@ package utils
 import (
 	"io/ioutil"
 	"os"
-	"strings"
+	"path/filepath"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
@@ -19,11 +19,7 @@ func WriteFileSafely(path string, content []byte, relative bool, output bool) {
 		if err != nil {
 			statuser.Error("Failed to get current working directory", err, 1)
 		}
-		if strings.HasPrefix(path, "/") {
-			path = cwd + path
-		} else {
-			path = cwd + "/" + path
-		}
+		path = filepath.Join(cwd, path)
 	}
 
 	info, err := os.Stat(path)
