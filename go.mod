@@ -5,7 +5,6 @@ go 1.15
 require (
 	github.com/AlecAivazis/survey/v2 v2.1.1
 	github.com/Matt-Gleich/logoru v0.0.0-20200904210752-deb4c45dfe26
-	github.com/Matt-Gleich/statuser v1.0.1
 	github.com/Matt-Gleich/statuser/v2 v2.0.1
 	github.com/Netflix/go-expect v0.0.0-20200312175327-da48e75238e2 // indirect
 	github.com/creack/pty v1.1.11 // indirect

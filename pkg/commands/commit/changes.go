@@ -1,7 +1,7 @@
 package commit
 
 import (
-	"github.com/Matt-Gleich/statuser"
+	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/go-git/go-git/v5"
 )
 
