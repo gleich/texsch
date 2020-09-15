@@ -5,7 +5,8 @@ import (
 	"github.com/go-git/go-git/v5"
 )
 
-func GetChanges() git.Status {
+// Get the changes in the repo
+func GetChanges() (git.Status, *git.Worktree) {
 	repo, err := git.PlainOpen(".")
 	if err != nil {
 		statuser.Error("Failed to read from git repo", err, 1)
@@ -18,5 +19,5 @@ func GetChanges() git.Status {
 	if err != nil {
 		statuser.Error("Failed to get status of changes in git repo", err, 1)
 	}
-	return status
+	return status, workingTree
 }

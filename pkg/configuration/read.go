@@ -2,6 +2,7 @@ package configuration
 
 import (
 	"io/ioutil"
+	"path/filepath"
 
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
@@ -12,20 +13,27 @@ import (
 // Read from the configuration.yaml file
 func GetGeneral() configure.GeneralAnswers {
 	var data configure.GeneralAnswers
-	readYAML("/texsch/configuration.yaml", &data)
+	readYAML(configure.GeneralFile, &data)
 	return data
 }
 
 // Read from the classes.yaml file
 func GetClasses() []configure.Class {
 	var data []configure.Class
-	readYAML("/texsch/classes.yaml", &data)
+	readYAML(configure.ClassesFile, &data)
+	return data
+}
+
+// Read from the commits.yaml file
+func GetCommitConfig() configure.CommitAnswers {
+	var data configure.CommitAnswers
+	readYAML(configure.CommitsFile, &data)
 	return data
 }
 
 // Read from a yaml file
 func readYAML(fPath string, out interface{}) {
-	data, err := ioutil.ReadFile(location.GetProjectRoot() + fPath)
+	data, err := ioutil.ReadFile(filepath.Join(location.GetProjectRoot(), fPath))
 	if err != nil {
 		statuser.Error("Failed to read from classes.yaml file", err, 1)
 	}

@@ -31,6 +31,7 @@ Configure the following for texsch:
 		configure.Write(
 			configure.General(),
 			configure.Classes(),
+			configure.Commits(),
 			configure.Templates(),
 		)
 	},

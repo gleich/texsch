@@ -17,6 +17,7 @@ var initCmd = &cobra.Command{
 		configure.Write(
 			configure.General(),
 			configure.Classes(),
+			configure.Commits(),
 			configure.Templates(),
 		)
 		initialize.CreateFiles()

@@ -12,13 +12,21 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// Where the configuration files live
+const (
+	GeneralFile = "texsch/configuration.yaml"
+	ClassesFile = "texsch/classes.yaml"
+	CommitsFile = "texsch/commits.yaml"
+)
+
 // Write the changes to the files
-func Write(generalConfig GeneralAnswers, classes []Class, templatesConfig TemplatesAnswers) {
+func Write(generalConfig GeneralAnswers, classes []Class, commitConfig CommitAnswers, templatesConfig TemplatesAnswers) {
 	status.Step("✍️", "Writing Changes")
 	confirm()
 	createFolder()
-	writeYaml(generalConfig, "texsch/configuration.yaml")
-	writeYaml(classes, "texsch/classes.yaml")
+	writeYaml(generalConfig, GeneralFile)
+	writeYaml(classes, ClassesFile)
+	writeYaml(commitConfig, CommitsFile)
 	writeTemplates(templatesConfig)
 }
 

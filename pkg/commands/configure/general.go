@@ -15,11 +15,6 @@ type GeneralAnswers struct {
 // Configure general information
 func General() GeneralAnswers {
 	status.Step("⚙️", "General Configuration")
-	return ask()
-}
-
-// Ask the questions
-func ask() GeneralAnswers {
 	questions := []*survey.Question{
 		{
 			Name:      "full_name",
@@ -28,7 +23,7 @@ func ask() GeneralAnswers {
 			Transform: survey.Title,
 		},
 		{
-			Name: "year",
+			Name: "school_year",
 			Prompt: &survey.Select{
 				Message: "What year are you in?",
 				Options: []string{"Freshman", "Sophomore", "Junior", "Senior"},
