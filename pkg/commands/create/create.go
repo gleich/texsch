@@ -32,10 +32,9 @@ func Document() {
 
 	questions := []*survey.Question{
 		{
-			Name:      "name",
-			Prompt:    &survey.Input{Message: "What is the name of the document?"},
-			Validate:  survey.Required,
-			Transform: survey.Title,
+			Name:     "name",
+			Prompt:   &survey.Input{Message: "What is the name of the document?"},
+			Validate: survey.Required,
 		},
 		{
 			Name: "type",
