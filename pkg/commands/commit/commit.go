@@ -28,6 +28,7 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 		authorFullName = configuration.GetGeneral().Full_Name
 		commitConfig   = configuration.GetCommitConfig()
 		emojis         = commitConfig.Emojis
+		committed      int
 	)
 	for latexPath := range latexChanges {
 		var (
@@ -112,8 +113,10 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 				statuser.Error("Failed to commit changes for "+docName, err, 1)
 			}
 			status.Success("Committed " + docName)
+			committed++
 		}
 	}
+	status.Success("Committed " + fmt.Sprint(committed) + " documents")
 }
 
 // Sort the changes into latex, pdf, and other files

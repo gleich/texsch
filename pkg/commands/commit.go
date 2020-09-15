@@ -4,7 +4,6 @@ import (
 	"github.com/Matt-Gleich/texsch/pkg/commands/commit"
 	"github.com/Matt-Gleich/texsch/pkg/commands/separate"
 	"github.com/Matt-Gleich/texsch/pkg/location"
-	"github.com/Matt-Gleich/texsch/pkg/status"
 	"github.com/spf13/cobra"
 )
 
@@ -19,7 +18,6 @@ var commitCmd = &cobra.Command{
 		separate.MoveFiles(files, false)
 
 		changes, workingTree := commit.GetChanges()
-		status.Success("Got changes")
 		commit.CommitChanges(changes, workingTree)
 	},
 }
