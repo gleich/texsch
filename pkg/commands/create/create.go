@@ -98,11 +98,12 @@ func createFile(answers DocumentOutline, folderPath string) {
 			templates = append(templates, strings.TrimSuffix(file.Name(), ".txt"))
 		}
 	}
-	templateName := "default"
+	var templateName string
 	if len(templates) > 1 {
 		prompt := &survey.Select{
 			Message: "What template would you like to use?",
 			Options: templates,
+			Default: "Default",
 		}
 		err := survey.AskOne(prompt, &templateName)
 		if err != nil {
