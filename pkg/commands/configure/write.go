@@ -81,11 +81,10 @@ func writeTemplates(templatesConfig TemplatesAnswers) {
 
 	files := map[string][]byte{}
 	if templatesConfig.Emojis {
-		files["default.txt"] = []byte(templates.DefaultEmojiVersion)
+		files["Default.txt"] = []byte(templates.DefaultEmojiVersion)
 	} else {
-		files["default.txt"] = []byte(templates.DefaultPlainVersion)
+		files["Default.txt"] = []byte(templates.DefaultPlainVersion)
 	}
-
 	for fileName, fileContent := range files {
 		filePath := "texsch/templates/" + fileName
 		utils.WriteFileSafely(filePath, fileContent, true, true)
