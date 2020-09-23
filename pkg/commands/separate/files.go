@@ -8,7 +8,6 @@ import (
 	"github.com/Matt-Gleich/logoru"
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/status"
-	"github.com/inancgumus/screen"
 )
 
 // Getting all the tex and pdf files for the project
@@ -34,10 +33,6 @@ func Files() (filePaths []string) {
 
 // Move the files
 func MoveFiles(filePaths []string, loop bool) {
-	if loop {
-		screen.Clear()
-		screen.MoveTopLeft()
-	}
 	for _, filePath := range filePaths {
 		var prefix string
 

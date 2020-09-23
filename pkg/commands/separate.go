@@ -6,6 +6,7 @@ import (
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/separate"
 	"github.com/Matt-Gleich/texsch/pkg/location"
+	"github.com/inancgumus/screen"
 	"github.com/spf13/cobra"
 )
 
@@ -20,6 +21,8 @@ var separateCmd = &cobra.Command{
 			statuser.Error("Failed to get loop flag", err, 1)
 		}
 		if loop {
+			screen.Clear()
+			screen.MoveTopLeft()
 			for {
 				files := separate.Files()
 				separate.MoveFiles(files, true)
