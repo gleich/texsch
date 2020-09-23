@@ -36,6 +36,7 @@ func Files() (filePaths []string) {
 func MoveFiles(filePaths []string, loop bool) {
 	if loop {
 		screen.Clear()
+		screen.MoveTopLeft()
 	}
 	for _, filePath := range filePaths {
 		var prefix string
