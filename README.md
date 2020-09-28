@@ -1,4 +1,4 @@
-<!-- DO NOT REMOVE - contributor_list:data:start:["Matt-Gleich"]:end -->
+<!-- DO NOT REMOVE - contributor_list:data:start:["Matt-Gleich", "dependabot-preview[bot]"]:end -->
 
 # texsch
 
@@ -18,9 +18,11 @@ LaTeX, when used correctly, is way faster then other systems like google drive. 
 I am refining and testing texsch on my setup and plan to release in early october.
 
 <!-- DO NOT REMOVE - contributor_list:start -->
-
 ## 👥 Contributors
 
+
 - **[@Matt-Gleich](https://github.com/Matt-Gleich)**
+
+- **[@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)**
 
 <!-- DO NOT REMOVE - contributor_list:end -->
