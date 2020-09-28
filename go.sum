@@ -7,6 +7,8 @@ github.com/Matt-Gleich/logoru v0.0.0-20200923180914-a23bf450ef67 h1:lsZMHJHoJfBF
 github.com/Matt-Gleich/logoru v0.0.0-20200923180914-a23bf450ef67/go.mod h1:db3PO+L1XEhATt4QRc7jR7FGXACKPU+Nhzmby9wc7ow=
 github.com/Matt-Gleich/statuser/v2 v2.0.1 h1:ty5uZt2vvEdC+2Sk/fuMROvuGf6y/KtfkfV+u/FQBxo=
 github.com/Matt-Gleich/statuser/v2 v2.0.1/go.mod h1:S1XWSMcVPUzej6pP8MrU/+CJd8oYusRkPFQJPXSwJ8Y=
+github.com/Matt-Gleich/statuser/v2 v2.3.1 h1:NpyKd5F9a2D7Wcju63hQ+RYPo5lk/RbbCnOMBU7YXZM=
+github.com/Matt-Gleich/statuser/v2 v2.3.1/go.mod h1:eGYKO1S7SIJhXqVSSE/PPOXQ0ceMP27wA9ePo5HYhHY=
 github.com/Netflix/go-expect v0.0.0-20180615182759-c93bf25de8e8 h1:xzYJEypr/85nBpB11F9br+3HUrpgb+fcm5iADzXXYEw=
 github.com/Netflix/go-expect v0.0.0-20180615182759-c93bf25de8e8/go.mod h1:oX5x61PbNXchhh0oikYAH+4Pcfw5LKv21+Jnpr6r6Pc=
 github.com/Netflix/go-expect v0.0.0-20200312175327-da48e75238e2 h1:y2avNRjCeJT8b7svzjhKZjsvW5Jki/iAqTBEPJURaUg=
@@ -237,6 +239,7 @@ golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20200302150141-5c8b2ff67527/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200620081246-981b61492c35/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200625212154-ddb9806d33ae/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200810151505-1b9f1253b3ed/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200923182605-d9f96fdee20d h1:L/IKR6COd7ubZrs2oTnTi73IhgqJ71c9s80WsQnh0Es=
 golang.org/x/sys v0.0.0-20200923182605-d9f96fdee20d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
