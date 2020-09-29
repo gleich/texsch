@@ -7,7 +7,6 @@ import (
 
 	"github.com/Matt-Gleich/logoru"
 	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/status"
 )
 
 // Getting all the tex and pdf files for the project
@@ -77,7 +76,7 @@ func MoveFiles(filePaths []string, loop bool) {
 		if loop {
 			logoru.Success("Moved", outputPath)
 		} else {
-			status.Success("Moved " + outputPath)
+			statuser.Success("Moved " + outputPath)
 		}
 	}
 }

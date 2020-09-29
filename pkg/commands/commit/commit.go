@@ -7,7 +7,6 @@ import (
 
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/configuration"
-	"github.com/Matt-Gleich/texsch/pkg/status"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
@@ -112,11 +111,11 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 			if err != nil {
 				statuser.Error("Failed to commit changes for "+docName, err, 1)
 			}
-			status.Success("Committed " + docName)
+			statuser.Success("Committed " + docName)
 			committed++
 		}
 	}
-	status.Success("Committed " + fmt.Sprint(committed) + " documents")
+	statuser.Success("Committed " + fmt.Sprint(committed) + " documents")
 }
 
 // Sort the changes into latex, pdf, and other files

@@ -6,7 +6,6 @@ import (
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/status"
 	"gopkg.in/yaml.v3"
 )
 
@@ -41,6 +40,6 @@ func Set(fPath string) string {
 	if err != nil {
 		statuser.Error("Failed to write project root path to global config", err, 1)
 	}
-	status.Success("Set project root")
+	statuser.Success("Set project root")
 	return cwd
 }

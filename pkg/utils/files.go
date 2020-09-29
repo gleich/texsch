@@ -7,7 +7,6 @@ import (
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/status"
 )
 
 // Write to a file safely.
@@ -57,6 +56,6 @@ func WriteFileSafely(path string, content []byte, relative bool, output bool) {
 		statuser.Error("Failed to write to file at "+path, err, 1)
 	}
 	if output {
-		status.Success("Created file at " + path)
+		statuser.Success("Created file at " + path)
 	}
 }
