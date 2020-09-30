@@ -26,6 +26,7 @@ var rootCmd = &cobra.Command{
 
 // Execute the main command
 func Execute() {
+	statuser.Emojis = false
 	if err := rootCmd.Execute(); err != nil {
 		statuser.Error("Failed to execute root command", err, 1)
 	}
