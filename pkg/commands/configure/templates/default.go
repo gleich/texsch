@@ -17,8 +17,6 @@ const DefaultPlainVersion = `\documentclass[12pt]{report}
 \usepackage{tikz}      % Plotting
 \usepackage{pgfplots}  % Plotting
 \usepackage{graphicx}  % Loading Images
-\usepackage{amssymb}   % Squares for todo lists
-\usepackage{pifont}    % More symbols used things such as todo lists
 \usepackage{fancyhdr}  % Page formatting
 
 % ? Configuration:
@@ -27,10 +25,7 @@ const DefaultPlainVersion = `\documentclass[12pt]{report}
 \pgfplotsset{compat=1.16}             % Typeset for pgfplots package
 \setcounter{secnumdepth}{4}           % Depth of the table of contents
 \setcounter{tocdepth}{4}              % Depth of the table of contents
-\newlist{todolist}{itemize}{2}        % Configuration for todo lists
-\setlist[todolist]{label=$\square$}   % Configuration for todo lists
 \pagestyle{fancy}                     % Page configuration
-\pagenumbering{Roman}                 % Page numbering
 \setlength{\headheight}{15pt}         % Page configuration
 \fancyhf{}                            % Page configuration
 \rfoot{Page \thepage}                 % Page footer configuration
@@ -87,8 +82,6 @@ const DefaultEmojiVersion = `\documentclass[12pt]{report}
 \usepackage{tikz}      % 📊 Plotting
 \usepackage{pgfplots}  % 📊 Plotting
 \usepackage{graphicx}  % 📷 Loading Images
-\usepackage{amssymb}   % ✅ Squares for todo lists
-\usepackage{pifont}    % ✅ More symbols used things such as todo lists
 \usepackage{fancyhdr}  % 📄 Page formatting
 
 % ? ⚙️ Configuration:
@@ -97,10 +90,7 @@ const DefaultEmojiVersion = `\documentclass[12pt]{report}
 \pgfplotsset{compat=1.16}             % 📊 Typeset for pgfplots package
 \setcounter{secnumdepth}{4}           % 🧾 Depth of the table of contents
 \setcounter{tocdepth}{4}              % 🧾 Depth of the table of contents
-\newlist{todolist}{itemize}{2}        % 🧾 Configuration for todo lists
-\setlist[todolist]{label=$\square$}   % 🧾 Configuration for todo lists
 \pagestyle{fancy}                     % 📄 Page configuration
-\pagenumbering{Roman}                 % 📄 Page numbering
 \setlength{\headheight}{15pt}         % 📄 Page configuration
 \fancyhf{}                            % 📄 Page configuration
 \rfoot{Page \thepage}                 % 🏈 Page footer configuration
