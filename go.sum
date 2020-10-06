@@ -7,6 +7,8 @@ github.com/Matt-Gleich/logoru v0.0.0-20200923180914-a23bf450ef67 h1:lsZMHJHoJfBF
 github.com/Matt-Gleich/logoru v0.0.0-20200923180914-a23bf450ef67/go.mod h1:db3PO+L1XEhATt4QRc7jR7FGXACKPU+Nhzmby9wc7ow=
 github.com/Matt-Gleich/statuser/v2 v2.3.1 h1:NpyKd5F9a2D7Wcju63hQ+RYPo5lk/RbbCnOMBU7YXZM=
 github.com/Matt-Gleich/statuser/v2 v2.3.1/go.mod h1:eGYKO1S7SIJhXqVSSE/PPOXQ0ceMP27wA9ePo5HYhHY=
+github.com/Matt-Gleich/statuser/v2 v2.4.0 h1:kO+lRXqWx+FyK8f70EV8FwyEiFd3BCQQFZ44HACKEYo=
+github.com/Matt-Gleich/statuser/v2 v2.4.0/go.mod h1:U30Ecc1mFtOjmJS81/sQwkU6ahyqaKRLWT5gpEuYefY=
 github.com/Netflix/go-expect v0.0.0-20180615182759-c93bf25de8e8 h1:xzYJEypr/85nBpB11F9br+3HUrpgb+fcm5iADzXXYEw=
 github.com/Netflix/go-expect v0.0.0-20180615182759-c93bf25de8e8/go.mod h1:oX5x61PbNXchhh0oikYAH+4Pcfw5LKv21+Jnpr6r6Pc=
 github.com/Netflix/go-expect v0.0.0-20200312175327-da48e75238e2 h1:y2avNRjCeJT8b7svzjhKZjsvW5Jki/iAqTBEPJURaUg=
@@ -45,6 +47,8 @@ github.com/dustin/go-humanize v1.0.0 h1:VSnTsYCnlFHaM2/igO1h6X3HA71jcobQuxemgkq4
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/emirpasic/gods v1.12.0 h1:QAUIPSaCu4G+POclxeqb3F+WPpdKqFGlw36+yOzGlrg=
 github.com/emirpasic/gods v1.12.0/go.mod h1:YfzfFFoVP/catgzJb4IKIqXjX78Ha8FMSDh3ymbK86o=
+github.com/enescakir/emoji v1.0.0 h1:W+HsNql8swfCQFtioDGDHCHri8nudlK1n5p2rHCJoog=
+github.com/enescakir/emoji v1.0.0/go.mod h1:Bt1EKuLnKDTYpLALApstIkAjdDrS/8IAgTkKp+WKFD0=
 github.com/fatih/color v1.9.0 h1:8xPHl4/q1VyqGIPif1F+1V3Y3lSmrq01EabUW3CoW5s=
 github.com/fatih/color v1.9.0/go.mod h1:eQcE1qtQxscV5RaZvpXrrb8Drkc3/DdQ+uUYCNjL+zU=
 github.com/flynn/go-shlex v0.0.0-20150515145356-3f9db97f8568 h1:BHsljHzVlRcyQhjrss6TZTdY2VfCqZPbv5k3iBFa2ZQ=
