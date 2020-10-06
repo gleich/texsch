@@ -5,8 +5,6 @@ github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Matt-Gleich/logoru v0.0.0-20200923180914-a23bf450ef67 h1:lsZMHJHoJfBFBYLtnJrVKyvvnp4lMWca7yQDxqWfcns=
 github.com/Matt-Gleich/logoru v0.0.0-20200923180914-a23bf450ef67/go.mod h1:db3PO+L1XEhATt4QRc7jR7FGXACKPU+Nhzmby9wc7ow=
-github.com/Matt-Gleich/statuser/v2 v2.3.1 h1:NpyKd5F9a2D7Wcju63hQ+RYPo5lk/RbbCnOMBU7YXZM=
-github.com/Matt-Gleich/statuser/v2 v2.3.1/go.mod h1:eGYKO1S7SIJhXqVSSE/PPOXQ0ceMP27wA9ePo5HYhHY=
 github.com/Matt-Gleich/statuser/v2 v2.4.0 h1:kO+lRXqWx+FyK8f70EV8FwyEiFd3BCQQFZ44HACKEYo=
 github.com/Matt-Gleich/statuser/v2 v2.4.0/go.mod h1:U30Ecc1mFtOjmJS81/sQwkU6ahyqaKRLWT5gpEuYefY=
 github.com/Netflix/go-expect v0.0.0-20180615182759-c93bf25de8e8 h1:xzYJEypr/85nBpB11F9br+3HUrpgb+fcm5iADzXXYEw=
