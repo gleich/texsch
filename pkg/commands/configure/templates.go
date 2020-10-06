@@ -4,6 +4,7 @@ import (
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/status"
+	"github.com/enescakir/emoji"
 )
 
 type TemplatesAnswers struct {
@@ -13,7 +14,7 @@ type TemplatesAnswers struct {
 
 // Configure the templates
 func Templates() TemplatesAnswers {
-	status.Step("🖨", "Template Configuration")
+	status.Step(emoji.Printer, "Template Configuration")
 	var defaults bool
 	prompt := &survey.Confirm{
 		Message: "Do you want to use the default templates?",

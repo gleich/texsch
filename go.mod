@@ -10,6 +10,7 @@ require (
 	github.com/atotto/clipboard v0.1.2
 	github.com/creack/pty v1.1.11 // indirect
 	github.com/dustin/go-humanize v1.0.0
+	github.com/enescakir/emoji v1.0.0
 	github.com/go-git/go-git/v5 v5.1.0
 	github.com/hinshun/vt10x v0.0.0-20180809195222-d55458df857c // indirect
 	github.com/inancgumus/screen v0.0.0-20190314163918-06e984b86ed3

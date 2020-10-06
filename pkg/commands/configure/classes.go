@@ -6,6 +6,7 @@ import (
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/status"
+	"github.com/enescakir/emoji"
 )
 
 // Class outline
@@ -16,7 +17,7 @@ type Class struct {
 
 // Configure the classes
 func Classes() []Class {
-	status.Step("📚", "Class Configuration")
+	status.Step(emoji.Books, "Class Configuration")
 	fmt.Println(
 		`We are now going to configure classes.
 Once you are done just enter nothing for the class name.`,

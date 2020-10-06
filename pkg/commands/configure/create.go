@@ -4,6 +4,7 @@ import (
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/status"
+	"github.com/enescakir/emoji"
 )
 
 // General answers outline
@@ -14,7 +15,7 @@ type CreateAnswers struct {
 
 // Configure document creation
 func Create() CreateAnswers {
-	status.Step("✨", "Document Creation Configuration")
+	status.Step(emoji.Sparkles, "Document Creation Configuration")
 	questions := []*survey.Question{
 		{
 			Name:     "clipboard",

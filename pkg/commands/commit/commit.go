@@ -8,6 +8,7 @@ import (
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/configuration"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
+	"github.com/enescakir/emoji"
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
 )
@@ -61,32 +62,32 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 			case "M":
 				changeMsg = "Update"
 				if emojis {
-					changeMsg = "✨ " + changeMsg
+					changeMsg = emoji.Sprint(emoji.Sparkles, " ", changeMsg)
 				}
 			case "A":
 				changeMsg = "Create"
 				if emojis {
-					changeMsg = "✨ " + changeMsg
+					changeMsg = emoji.Sprint(emoji.Sparkles, " ", changeMsg)
 				}
 			case "D":
 				changeMsg = "Remove"
 				if emojis {
-					changeMsg = "🔥 " + changeMsg
+					changeMsg = emoji.Sprint(emoji.Fire, " ", changeMsg)
 				}
 			case "R":
 				changeMsg = "Renamed"
 				if emojis {
-					changeMsg = "🚚 " + changeMsg
+					changeMsg = emoji.Sprint(emoji.DeliveryTruck, " ", changeMsg)
 				}
 			case "C":
 				changeMsg = "Copied"
 				if emojis {
-					changeMsg = "✨ " + changeMsg
+					changeMsg = emoji.Sprint(emoji.Sparkles, " ", changeMsg)
 				}
 			case "U":
 				changeMsg = "Updated"
 				if emojis {
-					changeMsg = "✨ " + changeMsg
+					changeMsg = emoji.Sprint(emoji.Sparkles, " ", changeMsg)
 				}
 			default:
 				statuser.ErrorMsg("Unrecognized change status "+newLatexChangeStatus, 1)

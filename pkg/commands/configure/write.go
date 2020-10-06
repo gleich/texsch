@@ -9,6 +9,7 @@ import (
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure/templates"
 	"github.com/Matt-Gleich/texsch/pkg/status"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
+	"github.com/enescakir/emoji"
 	"gopkg.in/yaml.v3"
 )
 
@@ -22,7 +23,7 @@ const (
 
 // Write the changes to the files
 func Write(generalConfig GeneralAnswers, classes []Class, commitConfig CommitAnswers, templatesConfig TemplatesAnswers, createConfig CreateAnswers) {
-	status.Step("✍️", "Writing Changes")
+	status.Step(emoji.Pen, "Writing Changes")
 	confirm()
 	createFolder()
 	writeYaml(generalConfig, GeneralFile)

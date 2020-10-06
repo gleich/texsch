@@ -4,6 +4,7 @@ import (
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/status"
+	"github.com/enescakir/emoji"
 )
 
 // General answers outline
@@ -14,7 +15,7 @@ type GeneralAnswers struct {
 
 // Configure general information
 func General() GeneralAnswers {
-	status.Step("⚙️", "General Configuration")
+	status.Step(emoji.Gear, "General Configuration")
 	questions := []*survey.Question{
 		{
 			Name:      "full_name",

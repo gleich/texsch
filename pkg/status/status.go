@@ -2,10 +2,12 @@ package status
 
 import (
 	"fmt"
+
+	"github.com/enescakir/emoji"
 )
 
-func Step(emoji string, msg string) {
+func Step(e emoji.Emoji, msg string) {
 	fmt.Println("_______________________________________________________________________________________")
-	fmt.Printf("︳%v  %v▕\n", emoji, msg)
+	fmt.Print(emoji.Sprintf("︳%v  %v▕\n", e, msg))
 	fmt.Println()
 }

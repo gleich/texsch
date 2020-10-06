@@ -6,6 +6,7 @@ import (
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/status"
+	"github.com/enescakir/emoji"
 )
 
 // Commit answers outline
@@ -15,7 +16,7 @@ type CommitAnswers struct {
 }
 
 func Commits() CommitAnswers {
-	status.Step("📁", "Automatic Git Commits")
+	status.Step(emoji.FileFolder, "Automatic Git Commits")
 	fmt.Println("texsch can automatically commit your documents for you")
 	fmt.Println()
 	questions := []*survey.Question{
