@@ -7,6 +7,7 @@ require (
 	github.com/Matt-Gleich/logoru v0.0.0-20200923180914-a23bf450ef67
 	github.com/Matt-Gleich/statuser/v2 v2.4.0
 	github.com/Netflix/go-expect v0.0.0-20200312175327-da48e75238e2 // indirect
+	github.com/atotto/clipboard v0.1.2
 	github.com/creack/pty v1.1.11 // indirect
 	github.com/dustin/go-humanize v1.0.0
 	github.com/go-git/go-git/v5 v5.1.0

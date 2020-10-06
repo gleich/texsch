@@ -31,6 +31,13 @@ func GetCommitConfig() configure.CommitAnswers {
 	return data
 }
 
+// Read from the create.yaml file
+func GetCreateConfig() configure.CreateAnswers {
+	var data configure.CreateAnswers
+	readYAML(configure.CreateFile, &data)
+	return data
+}
+
 // Read from a yaml file
 func readYAML(fPath string, out interface{}) {
 	data, err := ioutil.ReadFile(filepath.Join(location.GetProjectRoot(), fPath))

@@ -22,7 +22,7 @@ type DocumentOutline struct {
 }
 
 // Create a document
-func Document() {
+func Document() string {
 	// Asking information
 	classNames := []string{}
 	classConfig := configuration.GetClasses()
@@ -66,8 +66,9 @@ func Document() {
 	if err != nil {
 		statuser.Error("Failed to ask document questions", err, 1)
 	}
-	path := createFolder(answers)
-	createFile(answers, path)
+	folderPath := createFolder(answers)
+	filePath := createFile(answers, folderPath)
+	return filePath
 }
 
 // Create the folder for a file
@@ -86,7 +87,7 @@ func createFolder(answers DocumentOutline) string {
 }
 
 // Create the actual document file
-func createFile(answers DocumentOutline, folderPath string) {
+func createFile(answers DocumentOutline, folderPath string) string {
 	// Reading from template
 	files, err := ioutil.ReadDir("./texsch/templates")
 	if err != nil {
@@ -151,4 +152,5 @@ func createFile(answers DocumentOutline, folderPath string) {
 	// Creating the actual file
 	filePath := folderPath + strings.ReplaceAll(answers.Name, " ", "-") + ".tex"
 	utils.WriteFileSafely(filePath, []byte(filledInDocument), true, true)
+	return filePath
 }

@@ -33,6 +33,7 @@ Configure the following for texsch:
 			configure.Classes(),
 			configure.Commits(),
 			configure.Templates(),
+			configure.Create(),
 		)
 	},
 }

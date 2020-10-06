@@ -12,7 +12,8 @@ var createCmd = &cobra.Command{
 	Short: "Create a document",
 	Run: func(cmd *cobra.Command, args []string) {
 		location.ChdirProjectRoot()
-		create.Document()
+		path := create.Document()
+		create.ClipboardAndOpen(path)
 	},
 }
 

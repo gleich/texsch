@@ -17,16 +17,18 @@ const (
 	GeneralFile = "texsch/configuration.yaml"
 	ClassesFile = "texsch/classes.yaml"
 	CommitsFile = "texsch/commits.yaml"
+	CreateFile  = "texsch/create.yaml"
 )
 
 // Write the changes to the files
-func Write(generalConfig GeneralAnswers, classes []Class, commitConfig CommitAnswers, templatesConfig TemplatesAnswers) {
+func Write(generalConfig GeneralAnswers, classes []Class, commitConfig CommitAnswers, templatesConfig TemplatesAnswers, createConfig CreateAnswers) {
 	status.Step("✍️", "Writing Changes")
 	confirm()
 	createFolder()
 	writeYaml(generalConfig, GeneralFile)
 	writeYaml(classes, ClassesFile)
 	writeYaml(commitConfig, CommitsFile)
+	writeYaml(createConfig, CreateFile)
 	writeTemplates(templatesConfig)
 }
 
