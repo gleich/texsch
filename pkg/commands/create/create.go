@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"sort"
 	"strings"
 	"time"
 
@@ -29,6 +30,7 @@ func Document() string {
 	for _, classConfiguration := range classConfig {
 		classNames = append(classNames, classConfiguration.Name)
 	}
+	sort.Strings(classNames)
 
 	questions := []*survey.Question{
 		{
