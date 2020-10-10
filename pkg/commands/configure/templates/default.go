@@ -38,7 +38,6 @@ const DefaultPlainVersion = `\documentclass[12pt]{report}
 % ? Commands:
 \newcommand{\horizontalrule}{\noindent\makebox[\textwidth]{\rule{\textwidth}{0.6pt}}}   % Horizontal Line
 \newcommand{\showimage}[2]{\includegraphics[width=#2]{#1}}                              % Load an image
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}                                           % Bullets in tabular environment (tables)
 \newcommand{\ctext}[3][RGB]{                                                            % Highlighter base command
     \begingroup
     \definecolor{hlcolor}{#1}{#2}\sethlcolor{hlcolor}
@@ -77,8 +76,6 @@ const DefaultEmojiVersion = `\documentclass[12pt]{report}
 \usepackage{color}     % 🟡 Highlighted text and colored text
 \usepackage{soul}      % 🟡 Highlighted text and colored text
 \usepackage{xcolor}    % 🟡 Highlighted text and colored text
-\usepackage{amsmath}   % 🧮 Advanced mathematics
-\usepackage{polynom}   % 🧮 Advanced mathematics with polynomials
 \usepackage{tikz}      % 📊 Plotting
 \usepackage{pgfplots}  % 📊 Plotting
 \usepackage{graphicx}  % 📷 Loading Images
@@ -103,7 +100,6 @@ const DefaultEmojiVersion = `\documentclass[12pt]{report}
 % ? 🐚 Commands:
 \newcommand{\horizontalrule}{\noindent\makebox[\textwidth]{\rule{\textwidth}{0.6pt}}}   % 📏 Horizontal Line
 \newcommand{\showimage}[2]{\includegraphics[width=#2]{#1}}                              % 📷 Load an image
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}                                           % 🧾 Bullets in tabular environment (tables)
 \newcommand{\ctext}[3][RGB]{                                                            % 🟡 Highlighter base command
     \begingroup
     \definecolor{hlcolor}{#1}{#2}\sethlcolor{hlcolor}
