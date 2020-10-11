@@ -2,11 +2,9 @@ package configuration
 
 import (
 	"io/ioutil"
-	"path/filepath"
 
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
-	"github.com/Matt-Gleich/texsch/pkg/location"
 	"gopkg.in/yaml.v3"
 )
 
@@ -40,7 +38,7 @@ func GetCreateConfig() configure.CreateAnswers {
 
 // Read from a yaml file
 func readYAML(fPath string, out interface{}) {
-	data, err := ioutil.ReadFile(filepath.Join(location.GetProjectRoot(), fPath))
+	data, err := ioutil.ReadFile(fPath)
 	if err != nil {
 		statuser.Error("Failed to read from classes.yaml file", err, 1)
 	}

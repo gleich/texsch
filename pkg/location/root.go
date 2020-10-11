@@ -9,11 +9,9 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-var GlobalConfigPath = GetHomeDir() + "/.texsch.yaml"
-
 // Change directory to configured project root
 func ChdirProjectRoot() {
-	path := GetProjectRoot()
+	path := ProjectRoot()
 	err := os.Chdir(path)
 	if err != nil {
 		statuser.Error("Failed to change directory to project root", err, 1)
@@ -21,13 +19,14 @@ func ChdirProjectRoot() {
 }
 
 // Get the project root path from the global config
-func GetProjectRoot() string {
+func ProjectRoot() string {
+	globalConfigPath := GlobalConfigDir()
 	var path string
-	_, err := ioutil.ReadFile(GlobalConfigPath)
+	_, err := ioutil.ReadFile(globalConfigPath)
 	if err != nil {
-		path = setroot.Set(GlobalConfigPath)
+		path = setroot.Set(RootConfig, GlobalConfigDir())
 	} else {
-		data, err := ioutil.ReadFile(GlobalConfigPath)
+		data, err := ioutil.ReadFile(globalConfigPath)
 		if err != nil {
 			statuser.Error("Failed to read from global config file", err, 1)
 		}
@@ -41,13 +40,4 @@ func GetProjectRoot() string {
 		path = globalConfig.Path
 	}
 	return path
-}
-
-// Get user's home directory
-func GetHomeDir() string {
-	homeDir, err := os.UserHomeDir()
-	if err != nil {
-		statuser.Error("Failed to get home working directory", err, 1)
-	}
-	return homeDir
 }

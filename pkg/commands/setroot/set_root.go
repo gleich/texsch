@@ -10,7 +10,7 @@ import (
 )
 
 // Set the project root environment variable
-func Set(fPath string) string {
+func Set(fPath string, configFolder string) string {
 	cwd, err := os.Getwd()
 	if err != nil {
 		statuser.Error("Failed to get current working directory", err, 1)
@@ -27,6 +27,12 @@ func Set(fPath string) string {
 	}
 	if !confirmed {
 		statuser.ErrorMsg("Please change directory into the root of your project", 1)
+	}
+
+	// Creating the config folder if it doesn't already exist
+	err = os.MkdirAll(configFolder, 0777)
+	if err != nil {
+		statuser.Error("Failed to create config folder", err, 1)
 	}
 
 	yamlContent, err := yaml.Marshal(map[string]string{

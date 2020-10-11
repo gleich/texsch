@@ -18,7 +18,7 @@ You will need to do this if you ever move the location of your project on your c
 or plan to run texsch commands on another project.
 `,
 	Run: func(cmd *cobra.Command, args []string) {
-		setroot.Set(location.GlobalConfigPath)
+		setroot.Set(location.RootConfig, location.GlobalConfigDir())
 	},
 }
 
