@@ -22,7 +22,13 @@ const (
 )
 
 // Write the changes to the files
-func Write(generalConfig GeneralAnswers, classes []Class, commitConfig CommitAnswers, templatesConfig TemplatesAnswers, createConfig CreateAnswers) {
+func Write(
+	generalConfig GeneralAnswers,
+	classes []Class,
+	commitConfig CommitAnswers,
+	templatesConfig TemplatesAnswers,
+	createConfig CreateAnswers,
+) {
 	status.Step(emoji.Pen, "Writing Changes")
 	confirm()
 	createFolder()
