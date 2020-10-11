@@ -13,7 +13,7 @@ var initCmd = &cobra.Command{
 	Use:   "initialize",
 	Short: "Initialize a repo with texsch",
 	Run: func(cmd *cobra.Command, args []string) {
-		setroot.Set(location.RootConfig, location.GlobalConfigDir())
+		setroot.Set(location.RootConfigFile, location.GlobalConfigDir())
 		configure.Write(
 			configure.General(),
 			configure.Classes(),

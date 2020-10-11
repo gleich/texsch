@@ -5,7 +5,7 @@ import (
 	"runtime"
 )
 
-var RootConfig = filepath.Join(GlobalConfigDir(), "root.yml")
+var RootConfigFile = filepath.Join(GlobalConfigDir(), "root.yml")
 
 // Get the global configuration directory
 func GlobalConfigDir() string {

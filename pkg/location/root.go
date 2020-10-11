@@ -19,14 +19,12 @@ func ChdirProjectRoot() {
 }
 
 // Get the project root path from the global config
-func ProjectRoot() string {
-	globalConfigPath := GlobalConfigDir()
-	var path string
-	_, err := ioutil.ReadFile(globalConfigPath)
+func ProjectRoot() (path string) {
+	_, err := ioutil.ReadFile(RootConfigFile)
 	if err != nil {
-		path = setroot.Set(RootConfig, GlobalConfigDir())
+		path = setroot.Set(RootConfigFile, GlobalConfigDir())
 	} else {
-		data, err := ioutil.ReadFile(globalConfigPath)
+		data, err := ioutil.ReadFile(RootConfigFile)
 		if err != nil {
 			statuser.Error("Failed to read from global config file", err, 1)
 		}
