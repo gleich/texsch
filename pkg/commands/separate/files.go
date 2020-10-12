@@ -58,6 +58,7 @@ func MoveFiles(filePaths []string, loop bool) {
 		pathChunks := strings.Split(cleanedFilePath, "/")
 		fileFolderPath := prefix + strings.Join(pathChunks[:len(pathChunks)-1], "/") + "/"
 		fileName := pathChunks[len(pathChunks)-1]
+		outputPath := strings.Join(pathChunks[2:], "/")
 
 		_, err := os.Stat(fileFolderPath)
 		if os.IsNotExist(err) {
@@ -67,12 +68,15 @@ func MoveFiles(filePaths []string, loop bool) {
 			}
 		}
 
+		if loop {
+			logoru.Info("Detected", outputPath)
+		}
+
 		err = os.Rename(filePath, fileFolderPath+fileName)
 		if err != nil {
 			statuser.Error("Failed to move file", err, 1)
 		}
 
-		outputPath := strings.Join(pathChunks[2:], "/")
 		if loop {
 			logoru.Success("Moved", outputPath)
 		} else {
