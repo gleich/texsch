@@ -22,7 +22,7 @@ require (
 	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/spf13/cobra v1.1.0
+	github.com/spf13/cobra v1.1.1
 	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0 // indirect
 	golang.org/x/net v0.0.0-20201006153459-a7d1128ccaa0 // indirect
 	golang.org/x/sys v0.0.0-20201006155630-ac719f4daadf // indirect
