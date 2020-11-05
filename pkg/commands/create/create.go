@@ -53,6 +53,7 @@ func Document() string {
 					"Lab",
 					"Other",
 				},
+				PageSize: 30,
 			},
 		},
 		{
