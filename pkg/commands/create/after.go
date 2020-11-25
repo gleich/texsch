@@ -1,6 +1,7 @@
 package create
 
 import (
+	"os"
 	"os/exec"
 
 	"github.com/Matt-Gleich/statuser/v2"
@@ -21,7 +22,10 @@ func ClipboardAndOpen(path string) {
 
 	// Editor open
 	if config.Editor != "" {
-		err := exec.Command(config.Editor, path).Run()
+		cmd := exec.Command(config.Editor, path)
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+		err := cmd.Run()
 		if err != nil {
 			statuser.Error("Failed to open file in editor", err, 1)
 		}
