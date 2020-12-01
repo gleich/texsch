@@ -3,7 +3,7 @@ module github.com/Matt-Gleich/texsch
 go 1.15
 
 require (
-	github.com/AlecAivazis/survey/v2 v2.2.3
+	github.com/AlecAivazis/survey/v2 v2.2.4
 	github.com/Matt-Gleich/logoru v0.0.0-20200923180914-a23bf450ef67
 	github.com/Matt-Gleich/statuser/v2 v2.4.0
 	github.com/Netflix/go-expect v0.0.0-20200312175327-da48e75238e2 // indirect
