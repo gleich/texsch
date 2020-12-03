@@ -28,5 +28,6 @@ require (
 	golang.org/x/sys v0.0.0-20201006155630-ac719f4daadf // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
+	gopkg.in/djherbis/times.v1 v1.2.0
 	gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776
 )
