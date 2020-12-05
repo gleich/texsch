@@ -14,7 +14,6 @@ import (
 
 // Build the files that have been changed in the last 10 seconds.
 func BuildFiles(files []string) {
-
 	cwd, err := os.Getwd()
 	if err != nil {
 		statuser.Error("Failed to get current working directory", err, 1)
@@ -36,6 +35,7 @@ func BuildFiles(files []string) {
 				err = os.Chdir(strings.TrimSuffix(path, fName))
 				if err != nil {
 					logoru.Error("Failed to go to folder for", path, ";", err)
+					break
 				}
 
 				// Building file with pdflatex
@@ -46,6 +46,7 @@ func BuildFiles(files []string) {
 				err = cmd.Run()
 				if err != nil {
 					logoru.Error("Failed to compile", path, "with pdflatex;", err)
+					break
 				}
 				logoru.Success("Built", fName)
 
@@ -53,12 +54,14 @@ func BuildFiles(files []string) {
 				err = exec.Command("latexmk", "-c", fName).Run()
 				if err != nil {
 					logoru.Error("Failed to cleanup", path, "with latexmk -c;", err)
+					break
 				}
 
 				// Going back to original execution poin
 				err = os.Chdir(cwd)
 				if err != nil {
-					statuser.Error("Failed to go to back to original exection directory", err, 1)
+					statuser.Error("Failed to go to back to original execution directory", err, 1)
+					break
 				}
 
 			}
