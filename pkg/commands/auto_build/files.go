@@ -20,8 +20,7 @@ func BuildFiles(files []string) {
 	}
 
 	for _, path := range files {
-		if strings.HasSuffix(path, ".tex") {
-
+		if strings.HasSuffix(path, ".tex") && !strings.HasSuffix(path, "__latexindent_temp.tex") {
 			t, err := times.Stat(path)
 			if err != nil {
 				statuser.Error("Failed to status time for "+path, err, 1)
