@@ -20,7 +20,7 @@ var autoBuildCmd = &cobra.Command{
 			auto_build.BuildFiles(files)
 			files = separate.Files()
 			separate.MoveFiles(files, false)
-			time.Sleep(10 * time.Second)
+			time.Sleep(2 * time.Second)
 		}
 	},
 }

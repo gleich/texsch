@@ -25,7 +25,7 @@ func BuildFiles(files []string) {
 			if err != nil {
 				statuser.Error("Failed to status time for "+path, err, 1)
 			}
-			timeThreshold := time.Now().Add(time.Duration(-10) * time.Second)
+			timeThreshold := time.Now().Add(time.Duration(-2) * time.Second)
 
 			if t.ModTime().Unix() >= timeThreshold.Unix() {
 				fName := filepath.Base(path)
