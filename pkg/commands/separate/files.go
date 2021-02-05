@@ -13,7 +13,7 @@ import (
 func Files() (filePaths []string) {
 	// Getting files in project recursively
 	allFiles := []string{}
-	err := filepath.Walk(".", func(path string, f os.FileInfo, err error) error {
+	err := filepath.Walk("./LaTeX", func(path string, f os.FileInfo, err error) error {
 		allFiles = append(allFiles, path)
 		return nil
 	})
