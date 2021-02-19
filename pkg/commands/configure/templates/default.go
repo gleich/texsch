@@ -33,7 +33,7 @@ const DefaultPlainVersion = `\documentclass[12pt]{report}
 % ? Dynamic Configuration:
 \rhead{ASSIGNMENT_NAME $ \cdot $ DOCUMENT_TYPE}
 \lhead{AUTHOR_FULL_NAME}
-\graphicspath{{../../../../assets/images/PATH_CLASS_NAME/MONTH_NAME/DOCUMENT_TYPE/PATH_ASSIGNMENT_NAME/}}
+\graphicspath{{../../../../assets/images/PATH_CLASS_NAME/MONTH_NAME/DOCUMENT_TYPE/PATH_ASSIGNMENT_NAME_ESCAPED/}}
 
 % ? Commands:
 \newcommand{\horizontalrule}{\noindent\makebox[\textwidth]{\rule{\textwidth}{0.6pt}}}   % Horizontal Line
@@ -95,7 +95,7 @@ const DefaultEmojiVersion = `\documentclass[12pt]{report}
 % ? ⚙️ Dynamic Configuration:
 \rhead{ASSIGNMENT_NAME $ \cdot $ DOCUMENT_TYPE}
 \lhead{AUTHOR_FULL_NAME}
-\graphicspath{{../../../../assets/images/PATH_CLASS_NAME/MONTH_NAME/DOCUMENT_TYPE/PATH_ASSIGNMENT_NAME/}}
+\graphicspath{{../../../../assets/images/PATH_CLASS_NAME/MONTH_NAME/DOCUMENT_TYPE/PATH_ASSIGNMENT_NAME_ESCAPED/}}
 
 % ? 🐚 Commands:
 \newcommand{\horizontalrule}{\noindent\makebox[\textwidth]{\rule{\textwidth}{0.6pt}}}   % 📏 Horizontal Line
