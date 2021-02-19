@@ -11,7 +11,7 @@ Automation for techy students that write papers for high school in LaTeX
 
 ## ❓ Why
 
-LaTeX, when used correctly, is way faster then other systems like google drive. Over the last year I've developed a system that makes it super easy to work with LaTeX and I am finally making a CLI for it all.
+LaTeX, when used correctly, is way faster than other systems like google drive. Over the last year, I've developed a system that makes it super easy to work with LaTeX and I am finally making a CLI for it all.
 
 ## ⚠️ Notice
 
