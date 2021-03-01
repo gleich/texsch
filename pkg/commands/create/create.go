@@ -131,7 +131,6 @@ func createFile(answers DocumentOutline, folderPath string) string {
 	filledInDocument := utils.ReplaceAllMapped(
 		string(templateContent),
 		map[string]string{
-			"PATH_ASSIGNMENT_NAME": strings.ReplaceAll(answers.Name, " ", "-"),
 			"PATH_ASSIGNMENT_NAME_ESCAPED": utils.ReplaceAllMapped(
 				answers.Name,
 				map[string]string{
@@ -140,6 +139,7 @@ func createFile(answers DocumentOutline, folderPath string) string {
 					" ": "-",
 				},
 			),
+			"PATH_ASSIGNMENT_NAME": strings.ReplaceAll(answers.Name, " ", "-"),
 			"ASSIGNMENT_NAME": utils.ReplaceAllMapped(
 				answers.Name,
 				map[string]string{
