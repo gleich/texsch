@@ -136,6 +136,7 @@ func createFile(answers DocumentOutline, folderPath string) string {
 				map[string]string{
 					"#": "\\#",
 					"$": "\\$",
+					"&": "\\&",
 					" ": "-",
 				},
 			),
@@ -145,6 +146,7 @@ func createFile(answers DocumentOutline, folderPath string) string {
 				map[string]string{
 					"#": "\\#",
 					"$": "\\$",
+					"&": "\\&",
 				},
 			),
 			"AUTHOR_FULL_NAME": generalConfiguration.Full_Name,
