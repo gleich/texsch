@@ -3,7 +3,7 @@ module github.com/Matt-Gleich/texsch
 go 1.15
 
 require (
-	github.com/AlecAivazis/survey/v2 v2.2.8
+	github.com/AlecAivazis/survey/v2 v2.2.9
 	github.com/Matt-Gleich/logoru v0.0.0-20210115050520-e872b4cf39b1
 	github.com/Matt-Gleich/statuser/v2 v2.4.0
 	github.com/Microsoft/go-winio v0.4.16 // indirect
