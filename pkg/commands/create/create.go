@@ -59,8 +59,9 @@ func Document() string {
 		{
 			Name: "class",
 			Prompt: &survey.Select{
-				Message: "What class is this for?",
-				Options: classNames,
+				Message:  "What class is this for?",
+				Options:  classNames,
+				PageSize: 30,
 			},
 		},
 	}
