@@ -8,7 +8,6 @@ import (
 	"github.com/Matt-Gleich/statuser/v2"
 	"github.com/Matt-Gleich/texsch/pkg/configuration"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
-	"github.com/enescakir/emoji"
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
 )
@@ -27,7 +26,6 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 	var (
 		authorFullName = configuration.GetGeneral().Full_Name
 		commitConfig   = configuration.GetCommitConfig()
-		emojis         = commitConfig.Emojis
 		committed      int
 	)
 	for latexPath := range latexChanges {
@@ -60,35 +58,17 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 			case "?":
 				statuser.ErrorMsg("Failed to stage changes for "+latexPath, 1)
 			case "M":
-				changeMsg = "Update"
-				if emojis {
-					changeMsg = emoji.Sprint(emoji.Sparkles, " ", changeMsg)
-				}
+				changeMsg = "update"
 			case "A":
-				changeMsg = "Create"
-				if emojis {
-					changeMsg = emoji.Sprint(emoji.Sparkles, " ", changeMsg)
-				}
+				changeMsg = "create"
 			case "D":
-				changeMsg = "Remove"
-				if emojis {
-					changeMsg = emoji.Sprint(emoji.Fire, " ", changeMsg)
-				}
+				changeMsg = "remove"
 			case "R":
-				changeMsg = "Renamed"
-				if emojis {
-					changeMsg = emoji.Sprint(emoji.DeliveryTruck, " ", changeMsg)
-				}
+				changeMsg = "rename"
 			case "C":
-				changeMsg = "Copied"
-				if emojis {
-					changeMsg = emoji.Sprint(emoji.Sparkles, " ", changeMsg)
-				}
+				changeMsg = "copy"
 			case "U":
-				changeMsg = "Updated"
-				if emojis {
-					changeMsg = emoji.Sprint(emoji.Sparkles, " ", changeMsg)
-				}
+				changeMsg = "update"
 			default:
 				statuser.ErrorMsg("Unrecognized change status "+newLatexChangeStatus, 1)
 			}
@@ -96,10 +76,10 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 			// Committing changes
 			_, err := workingTree.Commit(
 				fmt.Sprintf(
-					"%v %v %v",
+					"%v[%v] %v",
 					changeMsg,
-					strings.ReplaceAll(docName, "-", " "),
 					docType,
+					strings.ReplaceAll(docName, "-", " "),
 				),
 				&git.CommitOptions{
 					Author: &object.Signature{
@@ -120,7 +100,10 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 }
 
 // Sort the changes into latex, pdf, and other files
-func sortChanges(changes git.Status, workTree bool) (map[string]string, map[string]string, map[string]string) {
+func sortChanges(
+	changes git.Status,
+	workTree bool,
+) (map[string]string, map[string]string, map[string]string) {
 	var (
 		latexFiles = map[string]string{}
 		PDFFiles   = map[string]string{}

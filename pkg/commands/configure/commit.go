@@ -11,8 +11,7 @@ import (
 
 // Commit answers outline
 type CommitAnswers struct {
-	Email  string
-	Emojis bool
+	Email string
 }
 
 func Commits() CommitAnswers {
@@ -24,12 +23,6 @@ func Commits() CommitAnswers {
 			Name:     "email",
 			Prompt:   &survey.Input{Message: "What is the email you use for committing?"},
 			Validate: survey.Required,
-		},
-		{
-			Name: "emojis",
-			Prompt: &survey.Confirm{
-				Message: "Do you want emojis in your commits using gitmoji?",
-			},
 		},
 	}
 	var answers CommitAnswers
