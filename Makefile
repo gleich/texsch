@@ -3,9 +3,9 @@
 ##########
 
 build-docker-dev:
-	docker build -f dev.Dockerfile -t mattgleich/texsch:test .
+	docker build -f docker/dev.Dockerfile -t mattgleich/texsch:test .
 build-docker-dev-lint:
-	docker build -f dev.lint.Dockerfile -t mattgleich/texsch:lint .
+	docker build -f docker/dev.lint.Dockerfile -t mattgleich/texsch:lint .
 build-go:
 	go get -v -t -d ./...
 	go build -v .
@@ -28,8 +28,8 @@ lint-gomod:
 lint-goreleaser:
 	goreleaser check
 lint-hadolint:
-	hadolint dev.Dockerfile
-	hadolint dev.lint.Dockerfile
+	hadolint docker/dev.Dockerfile
+	hadolint docker/dev.lint.Dockerfile
 lint-in-docker: build-docker-dev-lint
 	docker run mattgleich/texsch:lint
 
