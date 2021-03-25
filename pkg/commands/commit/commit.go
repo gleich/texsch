@@ -6,27 +6,21 @@ import (
 	"time"
 
 	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/configuration"
+	"github.com/Matt-Gleich/texsch/pkg/config"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
 )
 
-// Commit the changes
-func CommitChanges(changes git.Status, workingTree *git.Worktree) {
-	commitDocuments(changes, workingTree)
-}
-
 // Commit all LaTeX and PDF files
-func commitDocuments(changes git.Status, workingTree *git.Worktree) {
+func CommitDocuments(changes git.Status, workingTree *git.Worktree) {
 	// Sorting files
 	latexChanges, PDFChanges, _ := sortChanges(changes, true)
 
 	// Commiting and staging changes
 	var (
-		authorFullName = configuration.GetGeneral().Full_Name
-		commitConfig   = configuration.GetCommitConfig()
-		committed      int
+		conf      = config.Read()
+		committed int
 	)
 	for latexPath := range latexChanges {
 		var (
@@ -83,8 +77,8 @@ func commitDocuments(changes git.Status, workingTree *git.Worktree) {
 				),
 				&git.CommitOptions{
 					Author: &object.Signature{
-						Name:  authorFullName,
-						Email: commitConfig.Email,
+						Name:  conf.Name,
+						Email: conf.Commit.Email,
 						When:  time.Now(),
 					},
 				},

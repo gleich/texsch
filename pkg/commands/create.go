@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/Matt-Gleich/texsch/pkg/commands/create"
-	"github.com/Matt-Gleich/texsch/pkg/configuration"
+	"github.com/Matt-Gleich/texsch/pkg/config"
 	"github.com/Matt-Gleich/texsch/pkg/location"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
 	"github.com/spf13/cobra"
@@ -17,7 +17,7 @@ var createCmd = &cobra.Command{
 	Short: "Create a document",
 	Run: func(cmd *cobra.Command, args []string) {
 		location.ChdirProjectRoot()
-		classes := configuration.GetClassNames()
+		classes := config.ClassNames(config.Read())
 
 		if utils.GetBoolFlag(cmd, "classes") {
 			for _, class := range classes {
@@ -33,7 +33,7 @@ var createCmd = &cobra.Command{
 		}
 
 		path := create.Document(cmd, classes)
-		create.ClipboardAndOpen(path)
+		create.Post(path)
 	},
 }
 

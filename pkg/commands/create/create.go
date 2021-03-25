@@ -9,8 +9,7 @@ import (
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
-	"github.com/Matt-Gleich/texsch/pkg/configuration"
+	"github.com/Matt-Gleich/texsch/pkg/config"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
 	"github.com/dustin/go-humanize"
 	"github.com/spf13/cobra"
@@ -27,7 +26,7 @@ func Document(cmd *cobra.Command, classes []string) string {
 // Create the folder for a file
 func createFolder(answers DocumentOutline) string {
 	path := fmt.Sprintf(
-		"LaTeX/%v/%v/%v",
+		"LaTeX/%v/%v/%v/",
 		strings.ReplaceAll(answers.Class, " ", "-"),
 		time.Now().Month(),
 		answers.Type,
@@ -70,14 +69,14 @@ func createFile(answers DocumentOutline, folderPath string) string {
 	}
 
 	// Replacing document variables
-	var class configure.Class
-	for _, classInstance := range configuration.GetClasses() {
-		if classInstance.Name == answers.Class {
-			class = classInstance
+	conf := config.Read()
+	var class config.Class
+	for _, classConf := range conf.Classes {
+		if classConf.Name == answers.Class {
+			class = classConf
 		}
 	}
 	today := time.Now()
-	generalConfiguration := configuration.GetGeneral()
 	filledInDocument := utils.ReplaceAllMapped(
 		string(templateContent),
 		map[string]string{
@@ -99,9 +98,9 @@ func createFile(answers DocumentOutline, folderPath string) string {
 					"&": "\\&",
 				},
 			),
-			"AUTHOR_FULL_NAME": generalConfiguration.Full_Name,
+			"AUTHOR_FULL_NAME": conf.Name,
 			"CLASS_NAME":       class.Name,
-			"CLASS_TEACHER":    class.Teacher_Name,
+			"CLASS_TEACHER":    class.Teacher,
 			"DATE": fmt.Sprintf(
 				"%v, %v %v\\textsuperscript{%v}, %v",
 				today.Weekday(),
@@ -111,7 +110,7 @@ func createFile(answers DocumentOutline, folderPath string) string {
 				today.Year(),
 			),
 			"YEAR_NUMBER":     fmt.Sprint(today.Year()),
-			"SCHOOL_YEAR":     generalConfiguration.Full_Name,
+			"SCHOOL_YEAR":     conf.School_Year,
 			"DOCUMENT_TYPE":   answers.Type,
 			"PATH_CLASS-NAME": strings.ReplaceAll(answers.Class, " ", "-"),
 			"MONTH_NAME":      today.Month().String(),

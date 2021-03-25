@@ -5,15 +5,16 @@ import (
 	"os/exec"
 
 	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/configuration"
+	"github.com/Matt-Gleich/texsch/pkg/config"
 	"github.com/atotto/clipboard"
 )
 
-func ClipboardAndOpen(path string) {
-	config := configuration.GetCreateConfig()
+// Run Actions after creating the file
+func Post(path string) {
+	conf := config.Read().Create
 
 	// Clipboard
-	if config.Clipboard {
+	if conf.Clipboard {
 		err := clipboard.WriteAll(path)
 		if err != nil {
 			statuser.Error("Failed to copy path to clipboard", err, 1)
@@ -21,8 +22,8 @@ func ClipboardAndOpen(path string) {
 	}
 
 	// Editor open
-	if config.Editor != "" {
-		cmd := exec.Command(config.Editor, path)
+	if conf.Editor != "" {
+		cmd := exec.Command(conf.Editor, path)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		err := cmd.Run()

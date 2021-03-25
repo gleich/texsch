@@ -18,7 +18,7 @@ var commitCmd = &cobra.Command{
 		separate.MoveFiles(files, false)
 
 		changes, workingTree := commit.GetChanges()
-		commit.CommitChanges(changes, workingTree)
+		commit.CommitDocuments(changes, workingTree)
 	},
 }
 

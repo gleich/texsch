@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Matt-Gleich/texsch/pkg/configuration"
+	"github.com/Matt-Gleich/texsch/pkg/config"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
 )
 
 func CreateFiles() {
 	fmt.Println()
-	generalConfig := configuration.GetGeneral()
+	generalConfig := config.Read()
 
 	utils.WriteFileSafely(`.gitignore`, []byte(gitIgnoreTemplate), true, true)
 
@@ -19,7 +19,7 @@ func CreateFiles() {
 		licenseTemplate,
 		map[string]string{
 			"CURRENT_YEAR": fmt.Sprint(time.Now().Year()),
-			"FULL_NAME":    generalConfig.Full_Name,
+			"FULL_NAME":    generalConfig.Name,
 		},
 	)
 	utils.WriteFileSafely("LICENSE", []byte(filledInLICENSE), true, true)
