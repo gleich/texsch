@@ -1,6 +1,8 @@
 package configuration
 
 import (
+	"sort"
+
 	"github.com/Matt-Gleich/texsch/pkg/commands/configure"
 )
 
@@ -16,6 +18,17 @@ func GetClasses() []configure.Class {
 	var data []configure.Class
 	readYAML(configure.ClassesFile, &data)
 	return data
+}
+
+// Get the names of all the classes in alphabetical order
+func GetClassNames() []string {
+	classNames := []string{}
+	classes := GetClasses()
+	for _, class := range classes {
+		classNames = append(classNames, class.Name)
+	}
+	sort.Strings(classNames)
+	return classNames
 }
 
 // Read from the commits.yaml file

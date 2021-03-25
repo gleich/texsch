@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"sort"
 	"strings"
 	"time"
 
@@ -14,71 +13,21 @@ import (
 	"github.com/Matt-Gleich/texsch/pkg/configuration"
 	"github.com/Matt-Gleich/texsch/pkg/utils"
 	"github.com/dustin/go-humanize"
+	"github.com/spf13/cobra"
 )
 
-type DocumentOutline struct {
-	Name  string
-	Type  string
-	Class string
-}
-
 // Create a document
-func Document() string {
-	// Asking information
-	classNames := []string{}
-	classConfig := configuration.GetClasses()
-	for _, classConfiguration := range classConfig {
-		classNames = append(classNames, classConfiguration.Name)
-	}
-	sort.Strings(classNames)
-
-	questions := []*survey.Question{
-		{
-			Name:     "name",
-			Prompt:   &survey.Input{Message: "What is the name of the document?"},
-			Validate: survey.Required,
-		},
-		{
-			Name: "type",
-			Prompt: &survey.Select{
-				Message: "What is the type for the document?",
-				Options: []string{
-					"Notes",
-					"Worksheet",
-					"Practice",
-					"Paper",
-					"Assessment",
-					"Project",
-					"Presentation",
-					"Lab",
-					"Other",
-				},
-				PageSize: 30,
-			},
-		},
-		{
-			Name: "class",
-			Prompt: &survey.Select{
-				Message:  "What class is this for?",
-				Options:  classNames,
-				PageSize: 30,
-			},
-		},
-	}
-	var answers DocumentOutline
-	err := survey.Ask(questions, &answers)
-	if err != nil {
-		statuser.Error("Failed to ask document questions", err, 1)
-	}
-	folderPath := createFolder(answers)
-	filePath := createFile(answers, folderPath)
+func Document(cmd *cobra.Command, classes []string) string {
+	inputs := getInputs(cmd, classes)
+	folderPath := createFolder(inputs)
+	filePath := createFile(inputs, folderPath)
 	return filePath
 }
 
 // Create the folder for a file
 func createFolder(answers DocumentOutline) string {
 	path := fmt.Sprintf(
-		"LaTeX/%v/%v/%v/",
+		"LaTeX/%v/%v/%v",
 		strings.ReplaceAll(answers.Class, " ", "-"),
 		time.Now().Month(),
 		answers.Type,
