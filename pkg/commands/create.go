@@ -33,7 +33,7 @@ var createCmd = &cobra.Command{
 		}
 
 		path := create.Document(cmd, classes)
-		create.Post(path)
+		create.Post(cmd, path)
 	},
 }
 
@@ -43,5 +43,7 @@ func init() {
 	createCmd.Flags().StringP("class", "c", "", "Class name for the document (e.g. Physics)")
 	createCmd.Flags().Bool("classes", false, "Output the user's classes")
 	createCmd.Flags().Bool("doctypes", false, "Output the available document types")
+	createCmd.Flags().Bool("no-clipboard", false, "If the clipboard configuration should be ignored")
+	createCmd.Flags().Bool("no-editor", false, "If the editor configuration should be ignored")
 	rootCmd.AddCommand(createCmd)
 }
