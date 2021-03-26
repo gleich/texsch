@@ -19,7 +19,7 @@ import (
 func Document(cmd *cobra.Command, classes []string) string {
 	inputs := getInputs(cmd, classes)
 	folderPath := createFolder(inputs)
-	filePath := createFile(inputs, folderPath)
+	filePath := createFile(cmd, inputs, folderPath)
 	return filePath
 }
 
@@ -39,7 +39,7 @@ func createFolder(answers DocumentOutline) string {
 }
 
 // Create the actual document file
-func createFile(answers DocumentOutline, folderPath string) string {
+func createFile(cmd *cobra.Command, answers DocumentOutline, folderPath string) string {
 	// Reading from template
 	files, err := ioutil.ReadDir("./texsch/templates")
 	if err != nil {
@@ -51,8 +51,8 @@ func createFile(answers DocumentOutline, folderPath string) string {
 			templates = append(templates, strings.TrimSuffix(file.Name(), ".txt"))
 		}
 	}
-	var templateName string
-	if len(templates) > 1 {
+	templateName := utils.GetStringFlag(cmd, "template")
+	if len(templates) > 1 && templateName == "" {
 		prompt := &survey.Select{
 			Message: "What template would you like to use?",
 			Options: templates,
