@@ -9,7 +9,7 @@ import (
 
 	"github.com/Matt-Gleich/logoru"
 	"github.com/Matt-Gleich/statuser/v2"
-	"gopkg.in/djherbis/times.v1"
+	"github.com/djherbis/times"
 )
 
 // Build the files that have been changed in the last 10 seconds.
