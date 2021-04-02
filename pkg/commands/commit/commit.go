@@ -70,7 +70,7 @@ func CommitDocuments(changes git.Status, workingTree *git.Worktree) {
 			// Committing changes
 			_, err := workingTree.Commit(
 				fmt.Sprintf(
-					"%v[%v] %v",
+					"%v[%v]: %v",
 					changeMsg,
 					docType,
 					strings.ReplaceAll(docName, "-", " "),
