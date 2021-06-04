@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/config"
-	"github.com/Matt-Gleich/texsch/pkg/utils"
+	"github.com/gleich/statuser/v2"
+	"github.com/gleich/texsch/pkg/config"
+	"github.com/gleich/texsch/pkg/utils"
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
 )

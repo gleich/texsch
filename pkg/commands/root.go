@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"github.com/Matt-Gleich/statuser/v2"
+	"github.com/gleich/statuser/v2"
 	"github.com/spf13/cobra"
 )
 
@@ -12,9 +12,9 @@ var rootCmd = &cobra.Command{
 	Long: `
 🏫 Automation for techy students that write papers for high school in LaTeX
 
-🐙 Repository: https://github.com/Matt-Gleich/texsch
+🐙 Repository: https://github.com/gleich/texsch
 📟 Authors:
-	- Matthew Gleich (@Matt-Gleich)
+	- Matthew Gleich (@gleich)
 
 ████████╗███████╗██╗  ██╗███████╗ ██████╗██╗  ██╗
 ╚══██╔══╝██╔════╝╚██╗██╔╝██╔════╝██╔════╝██║  ██║

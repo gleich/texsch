@@ -3,9 +3,9 @@ package commands
 import (
 	"time"
 
-	"github.com/Matt-Gleich/texsch/pkg/commands/auto_build"
-	"github.com/Matt-Gleich/texsch/pkg/commands/separate"
-	"github.com/Matt-Gleich/texsch/pkg/location"
+	"github.com/gleich/texsch/pkg/commands/auto_build"
+	"github.com/gleich/texsch/pkg/commands/separate"
+	"github.com/gleich/texsch/pkg/location"
 	"github.com/spf13/cobra"
 )
 

@@ -1,13 +1,13 @@
-<!-- DO NOT REMOVE - contributor_list:data:start:["Matt-Gleich", "dependabot-preview[bot]"]:end -->
+<!-- DO NOT REMOVE - contributor_list:data:start:["gleich", "dependabot-preview[bot]"]:end -->
 
 # texsch
 
 Automation for techy students that write papers for high school in LaTeX
 
-![build](https://github.com/Matt-Gleich/texsch/workflows/build/badge.svg)
-![format](https://github.com/Matt-Gleich/texsch/workflows/format/badge.svg)
-![release](https://github.com/Matt-Gleich/texsch/workflows/release/badge.svg)
-![test](https://github.com/Matt-Gleich/texsch/workflows/test/badge.svg)
+![build](https://github.com/gleich/texsch/workflows/build/badge.svg)
+![format](https://github.com/gleich/texsch/workflows/format/badge.svg)
+![release](https://github.com/gleich/texsch/workflows/release/badge.svg)
+![test](https://github.com/gleich/texsch/workflows/test/badge.svg)
 
 ## ❓ Why
 
@@ -21,7 +21,7 @@ I am refining and testing texsch on my setup and plan to release in the summer o
 ## 👥 Contributors
 
 
-- **[@Matt-Gleich](https://github.com/Matt-Gleich)**
+- **[@gleich](https://github.com/gleich)**
 
 - **[@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)**
 

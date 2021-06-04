@@ -4,8 +4,8 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/commands/setroot"
+	"github.com/gleich/statuser/v2"
+	"github.com/gleich/texsch/pkg/commands/setroot"
 	"gopkg.in/yaml.v3"
 )
 

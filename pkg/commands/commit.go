@@ -1,9 +1,9 @@
 package commands
 
 import (
-	"github.com/Matt-Gleich/texsch/pkg/commands/commit"
-	"github.com/Matt-Gleich/texsch/pkg/commands/separate"
-	"github.com/Matt-Gleich/texsch/pkg/location"
+	"github.com/gleich/texsch/pkg/commands/commit"
+	"github.com/gleich/texsch/pkg/commands/separate"
+	"github.com/gleich/texsch/pkg/location"
 	"github.com/spf13/cobra"
 )
 

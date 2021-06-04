@@ -8,9 +8,9 @@ import (
 	"time"
 
 	"github.com/AlecAivazis/survey/v2"
-	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/config"
-	"github.com/Matt-Gleich/texsch/pkg/utils"
+	"github.com/gleich/statuser/v2"
+	"github.com/gleich/texsch/pkg/config"
+	"github.com/gleich/texsch/pkg/utils"
 	"github.com/dustin/go-humanize"
 	"github.com/spf13/cobra"
 )

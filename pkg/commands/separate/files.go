@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/Matt-Gleich/logoru"
-	"github.com/Matt-Gleich/statuser/v2"
+	"github.com/gleich/logoru"
+	"github.com/gleich/statuser/v2"
 )
 
 // Getting all the tex and pdf files for the project

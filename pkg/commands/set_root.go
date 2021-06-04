@@ -1,8 +1,8 @@
 package commands
 
 import (
-	"github.com/Matt-Gleich/texsch/pkg/commands/setroot"
-	"github.com/Matt-Gleich/texsch/pkg/location"
+	"github.com/gleich/texsch/pkg/commands/setroot"
+	"github.com/gleich/texsch/pkg/location"
 	"github.com/spf13/cobra"
 )
 

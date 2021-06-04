@@ -3,9 +3,9 @@ package commands
 import (
 	"time"
 
-	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/commands/separate"
-	"github.com/Matt-Gleich/texsch/pkg/location"
+	"github.com/gleich/statuser/v2"
+	"github.com/gleich/texsch/pkg/commands/separate"
+	"github.com/gleich/texsch/pkg/location"
 	"github.com/inancgumus/screen"
 	"github.com/spf13/cobra"
 )

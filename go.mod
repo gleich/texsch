@@ -1,11 +1,9 @@
-module github.com/Matt-Gleich/texsch
+module github.com/gleich/texsch
 
 go 1.16
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.2.9
-	github.com/Matt-Gleich/logoru v0.0.0-20210329061220-5de83e2ce6d8
-	github.com/Matt-Gleich/statuser/v2 v2.4.0
 	github.com/Netflix/go-expect v0.0.0-20201125194554-85d881c3777e // indirect
 	github.com/anmitsu/go-shlex v0.0.0-20200514113438-38f4b401e2be // indirect
 	github.com/atotto/clipboard v0.1.4
@@ -13,6 +11,8 @@ require (
 	github.com/djherbis/times v1.4.0
 	github.com/dustin/go-humanize v1.0.0
 	github.com/enescakir/emoji v1.0.0
+	github.com/gleich/logoru v0.0.0-20210604030243-2b936140111e
+	github.com/gleich/statuser/v2 v2.4.1
 	github.com/gliderlabs/ssh v0.3.1 // indirect
 	github.com/go-git/go-git/v5 v5.3.0
 	github.com/google/go-cmp v0.5.4 // indirect

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/Matt-Gleich/texsch/pkg/commands"
+import "github.com/gleich/texsch/pkg/commands"
 
 func main() {
 	commands.Execute()

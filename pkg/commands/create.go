@@ -6,11 +6,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Matt-Gleich/statuser/v2"
-	"github.com/Matt-Gleich/texsch/pkg/commands/create"
-	"github.com/Matt-Gleich/texsch/pkg/config"
-	"github.com/Matt-Gleich/texsch/pkg/location"
-	"github.com/Matt-Gleich/texsch/pkg/utils"
+	"github.com/gleich/statuser/v2"
+	"github.com/gleich/texsch/pkg/commands/create"
+	"github.com/gleich/texsch/pkg/config"
+	"github.com/gleich/texsch/pkg/location"
+	"github.com/gleich/texsch/pkg/utils"
 	"github.com/spf13/cobra"
 )
 
