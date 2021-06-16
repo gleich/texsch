@@ -15,7 +15,8 @@ type Data struct {
 		Email string
 	}
 	Create struct {
-		Clipboard bool
-		Editor    string
+		Clipboard     bool
+		Editor        string
+		EditorOptions string `toml:"editor_options"`
 	}
 }

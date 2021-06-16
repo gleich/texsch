@@ -4,10 +4,10 @@ import (
 	"os"
 	"os/exec"
 
+	"github.com/atotto/clipboard"
 	"github.com/gleich/statuser/v2"
 	"github.com/gleich/texsch/pkg/config"
 	"github.com/gleich/texsch/pkg/utils"
-	"github.com/atotto/clipboard"
 	"github.com/spf13/cobra"
 )
 
@@ -26,6 +26,9 @@ func Post(cmd *cobra.Command, path string) {
 	// Editor open
 	if conf.Editor != "" && !utils.GetBoolFlag(cmd, "no-editor") {
 		cmd := exec.Command(conf.Editor, path)
+		if conf.EditorOptions != "" {
+			cmd = exec.Command(conf.Editor, conf.EditorOptions, path)
+		}
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		err := cmd.Run()
